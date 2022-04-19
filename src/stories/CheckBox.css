@@ -1,0 +1,10 @@
+.CheckBox {
+    height: 2.4rem;
+    width: 2.4rem;
+
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #777;
+    border-radius: 8px;
+
+}
