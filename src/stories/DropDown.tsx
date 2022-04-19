@@ -16,30 +16,16 @@ import ClassyName from '../common/ClassyName';
 
 class DropDown extends React.Component<Props, State> {
 
-    private list;
-
     constructor(props: Props) {
         super(props);
 
+        // state를 초기화한다.
         this.state = {open: false};
 
+        // 이벤트 핸들러를 바인드한다.
         this.onClick = this.onClick.bind(this);
         this.onBlur = this.onBlur.bind(this);
 
-        this.list = this.props.items.map((item, index) => {
-            let className = new ClassyName("MoreMenu__Item");
-            if (item.color == 'red') {
-                className.modifier(item.color);
-            }
-
-            return <li 
-                className={className.getResult()} 
-                key={index} 
-                onClick={item.onClick}>
-                    {item.itemName}
-                </li>
-            }
-        );
     }
 
     onClick() {
@@ -57,17 +43,36 @@ class DropDown extends React.Component<Props, State> {
     
 
     render() {
-        let listClassName = new ClassyName("MoreMenu__List");
+        let moreMenuClassName = new ClassyName("MoreMenu");
         if (this.state.open) {
-            listClassName.modifier("open");
+            moreMenuClassName.modifier("open");
         }
 
+        const list = this.props.items.map((item, index) => {
+            let className = new ClassyName("MoreMenu__Item");
+            if (item.color == 'red') {
+                className.modifier(item.color);
+            }
+
+            return <li 
+                className={className.getResult()} 
+                key={index} 
+                onClick={item.onClick}>
+                    {item.itemName}
+                </li>
+            }
+        );
+
         return (
-            <div className="MoreMenu" onClick={this.onClick} onBlur={this.onBlur} tabIndex={0} >
+            <div className={moreMenuClassName.getResult()} onClick={this.onClick} onBlur={this.onBlur} tabIndex={0} >
                 {this.props.button}
-                <ul className={listClassName.getResult()}>
-                    {this.list}
+                {this.state.open ? 
+                <ul className="MoreMenu__List">
+                    {list}
                 </ul>
+                :
+                null
+                }
             </div>
         )
     }
@@ -77,11 +82,11 @@ export default DropDown;
 
 interface Props {
     button: React.ReactNode;
-    items: {
+    items: Array<{
         itemName: string,
         color?: 'red',
         onClick?: (e?: React.SyntheticEvent) => void
-    }[]
+    }>
 }
 
 interface State {

@@ -2,36 +2,35 @@
 
 .MoreMenu {
     display: inline-block;
+    border: 1px solid transparent;
 }
 
-.MoreMenu__Icon {
-    background-image: url('../../public/more.png');
-    height: 2.4rem;
-    widtH: 2.4rem;
+.MoreMenu--open {
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
 }
 
 .MoreMenu__List {
     list-style: none;
-    border: 1px solid var(--color-black);
-    border-radius: 4px;
+    
     background-color: var(--color-white);
     margin: 0;
-    visibility: hidden;
-    opacity: 0;
+    /* visibility: hidden;
+    opacity: 0; */
     transition: all .2s ease-in-out;
     padding: 0;
-    pointer-events: auto;
-    position: absolute;
+    position: relative;
+    animation-name: slowlyShown;
+    animation-duration: .8s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
 }
 
-.MoreMenu__List--open {
-    visibility: visible;
-    opacity: 1;
-}
+
 
 .MoreMenu__Item {
     text-decoration: none;
-    padding: 2rem 2.8rem;
+    padding: 1rem 1.6rem;
     transition: color .2s;
 }
 

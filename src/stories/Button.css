@@ -26,13 +26,3 @@
 .Button--color--blue {
     background-color: #53acff;
 }
-
-.Button:hover {
-    box-shadow: 0 1.5rem 4rem rgba(var(--color-black-rgb), .15);
-    transform: translateY(-0.8rem);
-}
-
-.Button:active {
-    box-shadow: 0 1rem 4rem rgba(var(--color-black-rgb), .15);
-    transform: translateY(-0.4rem);
-}
