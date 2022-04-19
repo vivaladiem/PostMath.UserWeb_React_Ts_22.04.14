@@ -1,5 +1,5 @@
 // MoreMenu.tsx
-import React, { ReactNode, SyntheticEvent } from 'react';
+import React from 'react';
 import './MoreMenu.css';
 import ClassyName from '../common/ClassyName';
 
@@ -24,7 +24,6 @@ import ClassyName from '../common/ClassyName';
 
 class MoreMenu extends React.Component<Props, State> {
 
-    private sampleData = ["해설 PDF 추가", "PDF 삭제"];
     private list;
 
     constructor(props: Props) {
@@ -33,65 +32,42 @@ class MoreMenu extends React.Component<Props, State> {
         this.state = {open: false};
 
         this.onItemClicked = this.onItemClicked.bind(this);
-        this.onCoverClicked = this.onCoverClicked.bind(this);
-
-        //this.list = this.props.items.map((item, index) =>
-        //    <li className="MoreMenu__Item" key={index} >{item.itemName}</li>
-        //);
 
         this.list = this.props.items.map((item, index) => {
             let className = new ClassyName("MoreMenu__Item");
             if (item.color == 'red') {
                 className.modifier(item.color);
             }
-            return <li className={className.getResult()} key={index} onClick={item.onClick}>{item.itemName}</li>
+
+            return <li 
+                className={className.getResult()} 
+                key={index} 
+                onClick={item.onClick}>
+                    {item.itemName}
+                </li>
             }
         );
 
     }
 
-
-    onItemClicked(e: SyntheticEvent) {
-        console.log(e.currentTarget);
+    onItemClicked(e: React.SyntheticEvent) {
         this.setState(prevState => ({
             open: !prevState.open
         }))
-
-        e.preventDefault();
-        e.stopPropagation();
     }
 
-    onCoverClicked() {
-        this.setState(() => {open: false})
-    }
-
-    /**
-     * 
-     * 클릭하면
-     *  커버를 씌운다(modifier open)
-     *  커버 안에 리스트를 넣는다
-     *  커버를 클릭하면
-     *      닫는다.
-     *      
-     */
-
-    
     render() {
         let listClassName = new ClassyName("MoreMenu__List");
-        let coverClassName = new ClassyName("MoreMenu__Cover");
         if (this.state.open) {
             listClassName.modifier("open");
-            coverClassName.modifier("open");
         }
 
         return (
-            <div className="MoreMenu" onClick={this.onItemClicked}>
+            <div className="MoreMenu" onFocus={this.onItemClicked} onBlur={this.onItemClicked} tabIndex={0} >
                 <img src="./more.png" alt="more menu" />
-                <div className={coverClassName.getResult()} onClick={this.onCoverClicked}>
-                    <ul className={listClassName.getResult()}>
-                        {this.list}
-                    </ul>
-                </div>
+                <ul className={listClassName.getResult()}>
+                    {this.list}
+                </ul>
             </div>
         )
     }
@@ -103,7 +79,7 @@ interface Props {
     items: {
         itemName: string,
         color?: 'red',
-        onClick?: (e?: SyntheticEvent) => void
+        onClick?: (e?: React.SyntheticEvent) => void
     }[]
 }
 

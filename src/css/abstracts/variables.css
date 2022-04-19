@@ -4,6 +4,7 @@
 
 :root{
     --color-primary: #2becb2;
+    --color-primary-rgb: 43, 236, 178;
     --color-primary-light: #21f9d0;
     --color-primary-gradient: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
     
@@ -12,10 +13,12 @@
     --color-secondary-gradient: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light));
 
     --color-white: #fff;
+    --color-white-rgb: 255, 255, 255;
 
     --color-grey: #c4c4c4;
 
     --color-black: #1C1C1E;
+    --color-black-rgb: 28, 28, 30;
 
     --color-error: #ff6969;
 }
