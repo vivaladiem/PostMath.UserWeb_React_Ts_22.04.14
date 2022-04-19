@@ -2,6 +2,7 @@
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import MoreMenu from './MoreMenu';
+import Button from './Button';
 
 export default {
     title: '더보기메뉴',
@@ -17,5 +18,4 @@ export const 더보기메뉴: ComponentStory<typeof MoreMenu> = () =>
         {itemName: "PDF 삭제", color: 'red', onClick: () => {alert("PDF 삭제");}}
     ]
 }/>
-
 </div>
