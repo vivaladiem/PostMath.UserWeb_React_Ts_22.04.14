@@ -1,19 +1,20 @@
-// MoreMenu.tsx
+// DropDown.tsx
 import React from 'react';
-import './MoreMenu.css';
+import './DropDown.css';
 import ClassyName from '../common/ClassyName';
 
 /**
- * 설      명 : 더보기 메뉴 아이콘 (점 3개)
+ * 설      명 : 드롭다운의 기능부분
  *              여닫는 기능만 구현하는 틀
- *              팝업속의 메뉴 리스트는 사용하는 곳에서 children으로 넣는다.
+ *              button, items 속성으로 완성해서 사용한다.
+ * 
  * 작  성  자 : 임영우
  * 작성  일자 : 22.04.19
  * 
  */
 
 
-class MoreMenu extends React.Component<Props, State> {
+class DropDown extends React.Component<Props, State> {
 
     private list;
 
@@ -22,7 +23,8 @@ class MoreMenu extends React.Component<Props, State> {
 
         this.state = {open: false};
 
-        this.onItemClicked = this.onItemClicked.bind(this);
+        this.onClick = this.onClick.bind(this);
+        this.onBlur = this.onBlur.bind(this);
 
         this.list = this.props.items.map((item, index) => {
             let className = new ClassyName("MoreMenu__Item");
@@ -38,14 +40,21 @@ class MoreMenu extends React.Component<Props, State> {
                 </li>
             }
         );
-
     }
 
-    onItemClicked(e: React.SyntheticEvent) {
+    onClick() {
         this.setState(prevState => ({
             open: !prevState.open
         }))
     }
+
+    onBlur(e: React.SyntheticEvent) {
+        this.setState(() => ({
+            open: false
+        }))
+    }
+
+    
 
     render() {
         let listClassName = new ClassyName("MoreMenu__List");
@@ -54,8 +63,8 @@ class MoreMenu extends React.Component<Props, State> {
         }
 
         return (
-            <div className="MoreMenu" onFocus={this.onItemClicked} onBlur={this.onItemClicked} tabIndex={0} >
-                <img src="./more.png" alt="more menu" />
+            <div className="MoreMenu" onClick={this.onClick} onBlur={this.onBlur} tabIndex={0} >
+                {this.props.button}
                 <ul className={listClassName.getResult()}>
                     {this.list}
                 </ul>
@@ -64,9 +73,10 @@ class MoreMenu extends React.Component<Props, State> {
     }
 }
 
-export default MoreMenu;
+export default DropDown;
 
 interface Props {
+    button: React.ReactNode;
     items: {
         itemName: string,
         color?: 'red',
