@@ -12,5 +12,6 @@ const Template: ComponentStory<typeof Input> = (args) => <Input{...args}/>;
 export const InputComponent = Template.bind({})
 InputComponent.args ={
   placeholder:'InputComponent',
-  backgroundcolor:'none'
+  backgroundcolor:'none',
+  button: <img src='img/plus.svg' />
 };

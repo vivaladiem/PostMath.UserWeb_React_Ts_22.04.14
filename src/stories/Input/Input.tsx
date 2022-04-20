@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './Input.css'
 import ClassyName from '../../common/ClassyName';
-import Button from '../Button/Button'
 
 interface Props {
   className?: string;
   placeholder: string;
-  size: ('long' | 'middle' | 'short' | 'mini');
+  size: ('long' | 'short' | 'mini');
   backgroundcolor?: 'grey' | 'none';
-  button?: ('pencil' | 'mini' | 'plus');
+  button?: React.ReactNode;
 }
 
 interface State {
@@ -44,49 +43,29 @@ class Input extends Component<Props, State> {
       className.modifier('backgroundColor-grey')
     }
 
-    let InputTag = <input type='text' placeholder={this.props.placeholder} className={className.getResult()} />
-    let ErrorTag =
-      <div className='InputError'>
-        <input type='text' placeholder={this.props.placeholder} className={className.getResult() + ' ' + 'Input--error'} />
-        <img className='InputError__WarningIcon' src='img/warning_icon.svg' />
-      </div>
 
-    if (this.props.button === 'pencil') {
-      InputTag =
-        <div className='InputButton'>
-          <input type='text' placeholder={this.props.placeholder} className={className.getResult()} />
-          <img className='Input__EditButton' src='img/edit.svg' />
-        </div>
+
+    let inputCn = new ClassyName("Input");
+    if (this.state.error) {
+      inputCn.modifier("error");
+    }
+    if (this.props.size) {
+      inputCn.modifier("size", this.props.size);
     }
 
-    if (this.props.button === 'mini') {
-      InputTag =
-        <div className='InputButton'>
-          <input type='text' placeholder={this.props.placeholder} className={className.getResult()} />
-          <span className='Input__MiniButton'><Button
-            color='greenGradient'
-            size='mini'
-          >확인</Button> </span>
-        </div>
-    }
-
-    if (this.props.button === 'plus') {
-      InputTag =
-        <div className='InputButton'>
-          <input type='text' placeholder={this.props.placeholder} className={className.getResult()} />
-          <img className='Input__PlusButton' src='img/plus.svg' />
+    let button = null;
+    if (this.props.button) {
+      button =
+        <div className="Input__Button">
+          {this.props.button}
         </div>
     }
 
     return (
-      <>
-        {
-          this.state.error ?
-            ErrorTag
-            :
-            InputTag
-        }
-      </>
+      <div className={inputCn.getResult()}>
+        <input type="text" className="Input__Form" placeholder={this.props.placeholder} />
+        {button}
+      </div>
     )
   }
 }

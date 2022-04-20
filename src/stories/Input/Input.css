@@ -1,44 +1,54 @@
-input::placeholder{
-  color:#bababa;
-}
-
-.Input{
-  padding:0.4rem 1.6rem;
-  font-size: 1.4rem;
-  border: 0.1rem solid rgba(196, 196, 196, 1);
-  border-radius:0.4rem;
-  color:var(--black);
-  caret-color:var(--green);
-  position:relative;
-}
-
-.Input:focus{
-  outline:0.15rem solid var(--green);
-}
 
 
-/*modifier*/
-.Input--backgroundColor-grey{
-  background-color: #F0F0F0;
-  border: 0.1rem solid transparent;
-}
-
-.Input--long{
-  width:42rem;
-  height: 6rem;
-}
-
-.Input--middle{
+.Input {
+  display: inline-block;
+  position: relative;
   width:33rem;
   height: 5rem;
 }
 
-.Input--short{
+.Input__Form:focus {
+  outline:0.15rem solid var(--color-primary);
+}
+
+.Input__Form{
+  font-size: 1.4rem;
+  border: 0.1rem solid var(--color-grey);
+  border-radius:0.4rem;
+  color:var(--color-black);
+  caret-color:var(--color-primary);
+  position:relative;
+  width: 100%;
+  float: left;
+  padding-right: 1rem;
+
+}
+
+.Input__Form::placeholder{
+  color:#bababa;
+}
+
+
+
+/*modifier*/
+.Input__Form--backgroundColor-grey{
+  background-color: #F0F0F0;
+  border: 0.1rem solid transparent;
+}
+
+.Input--size--long{
+  width:42rem;
+  height: 6rem;
+}
+
+
+
+.Input--size--short{
   width:23rem;
   height: 5rem;
 }
 
-.Input--mini{
+.Input--size--mini{
   width:20rem;
   height: 5rem;
 }
@@ -68,21 +78,9 @@ input::placeholder{
   top:2rem;
 }
 
-.Input__EditButton{
-  position:absolute;
-  right:1.2rem;
-  top:1.2rem;
-}
-
-.Input__MiniButton{
-  position:absolute;
-  right:1rem;
-  top:0.8rem;
-}
-
-.Input__PlusButton{
-  cursor:pointer;
-  position:absolute;
-  right:1.6rem;
-  top:1.8rem;
+.Input__Button {
+  position: absolute;
+  right: 6px;
+  vertical-align: text-bottom;
+  margin : auto 0;
 }

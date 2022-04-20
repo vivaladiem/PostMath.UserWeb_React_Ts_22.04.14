@@ -1,10 +1,10 @@
 // MoreMenu.stories.tsx
 import React from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import MoreMenu from './MoreMenu';
 
 export default {
-    title: '더보기메뉴',
+    title: '드롭다운/더보기메뉴',
     component: MoreMenu
 } as ComponentMeta<typeof MoreMenu>
 
