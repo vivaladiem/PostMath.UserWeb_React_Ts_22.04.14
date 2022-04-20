@@ -1,0 +1,80 @@
+
+/* common */
+
+.Card__Footer_a, .Card__Footer_b{
+  width:30rem;
+  padding:2rem;
+  position:relative;
+}
+
+
+/*#### Card__Footer_a ####*/
+
+.Card__Footer_a ul{
+  list-style:none;
+  display: inline-block;
+  padding:0;
+}
+
+.Card__Info_a li{
+  list-style:none;
+  display: inline-block;
+}
+
+.Card__Info_a{
+  text-align: left;
+  width:12.4rem;
+  margin-top:0;
+  margin-bottom:1.6rem;
+}
+
+.Card__Info + .Card__Info{
+  margin-left: 1.2rem;
+}
+
+.Card__InfoLabel_a{
+  text-align: left;
+  margin-right:0.4rem;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.Card__RealInfo_a{
+  font-weight:400;
+  font-size:1.2rem;
+}
+
+/*#### Card__Footer_b ####*/
+
+.Card__Info_b{
+  text-align: left;
+  width:24rem;
+  margin-top:0;
+  margin-bottom:0.4rem;
+}
+
+.Card__Footer_b ul{
+  list-style:none;
+  padding:0;
+}
+
+.Card__Info_b li{
+  list-style:none;
+  display: inline-block;
+}
+
+.Card__InfoLabel_b{
+  text-align: left;
+  margin-right:0.4rem;
+  font-weight:700;
+  font-size:1.2rem;
+}
+
+.Card__RealInfo_b{
+  font-weight:400;
+  font-size:1.2rem;
+}
+
+.Card__Footer-buttonarea_b{
+  margin-top: 1.2rem;
+}

@@ -1,0 +1,88 @@
+input::placeholder{
+  color:#bababa;
+}
+
+.Input{
+  padding:0.4rem 1.6rem;
+  font-size: 1.4rem;
+  border: 0.1rem solid rgba(196, 196, 196, 1);
+  border-radius:0.4rem;
+  color:var(--black);
+  caret-color:var(--green);
+  position:relative;
+}
+
+.Input:focus{
+  outline:0.15rem solid var(--green);
+}
+
+
+/*modifier*/
+.Input--backgroundColor-grey{
+  background-color: #F0F0F0;
+  border: 0.1rem solid transparent;
+}
+
+.Input--long{
+  width:42rem;
+  height: 6rem;
+}
+
+.Input--middle{
+  width:33rem;
+  height: 5rem;
+}
+
+.Input--short{
+  width:23rem;
+  height: 5rem;
+}
+
+.Input--mini{
+  width:20rem;
+  height: 5rem;
+}
+
+.Input--error{
+  border: 0.1rem solid var(--red);
+}
+
+.Input--error::placeholder{
+  color:var(--red);
+}
+
+.Input--error:focus{
+  outline-color: var(--red);
+}
+
+
+/* Input + Error && Button */
+
+.InputError, .InputButton{
+  position:relative;
+}
+
+.InputError__WarningIcon{
+  position:absolute;
+  right:2rem;
+  top:2rem;
+}
+
+.Input__EditButton{
+  position:absolute;
+  right:1.2rem;
+  top:1.2rem;
+}
+
+.Input__MiniButton{
+  position:absolute;
+  right:1rem;
+  top:0.8rem;
+}
+
+.Input__PlusButton{
+  cursor:pointer;
+  position:absolute;
+  right:1.6rem;
+  top:1.8rem;
+}

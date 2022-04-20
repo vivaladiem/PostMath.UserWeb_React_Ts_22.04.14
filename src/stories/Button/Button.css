@@ -1,0 +1,88 @@
+/* Button.css */
+
+.Button {
+  width : 14rem;
+  height: 3.6rem;
+  border-radius : 4px;
+  background-color : var(--color-grey);
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 3.6rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+
+/*
+'long' | 'longFat' | 'short' | 'shortFat' | 'mini' | 'round'; - X
+
+
+*/
+
+/*modifier*/
+
+[class$="Fat"] {
+  height: 5.2rem;
+}
+
+
+.Button--long{
+  width:26rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Button--longFat {
+  width: 42rem;
+}
+
+.Button--short{
+  width: 12.4rem;
+  font-size: 1.2rem;
+}
+
+.Button--shortFat{
+  width: 14rem;
+  font-size: 1.2rem;
+}
+
+.Button--mini{
+  width: 6rem;
+  height: 3.6rem;
+}
+
+.Button--round{
+  width: 14rem;
+  height: 4rem;
+  border-radius: 28px;
+}
+
+.Button--color--greenGradient{
+  background: var(--color-primary-gradient);
+}
+
+.Button--color--grey{
+  background: var(--color-grey);
+}
+
+.Button--color--green{
+  background: var(--color-primary);
+}
+
+.Button--color--red{
+  background: var(--color-tertiary);
+}
+
+.Button--color--blue{
+  background: var(--color-secondary);
+}
+
+.Button--short:not(:last-child) {
+  margin-right: 1.2rem;
+}
+
+.Button--long:not(:last-child) {
+  margin-bottom: 1.2rem;
+}

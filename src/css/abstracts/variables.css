@@ -11,6 +11,8 @@
     --color-secondary: #53acff;
     --color-secondary-light: #a0d0f8;
     --color-secondary-gradient: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light));
+    
+    --color-tertiary: #ff6969;
 
     --color-white: #fff;
     --color-white-rgb: 255, 255, 255;
@@ -20,5 +22,5 @@
     --color-black: #1C1C1E;
     --color-black-rgb: 28, 28, 30;
 
-    --color-error: #ff6969;
+
 }

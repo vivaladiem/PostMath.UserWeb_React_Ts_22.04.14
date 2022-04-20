@@ -3,7 +3,7 @@ import React from 'react';
 import DropDown from './DropDown';
 import './MoreMenu.css';
 
-class MoreMenu extends React.Component {
+class MoreMenu extends React.Component<Props> {
     render() {
         return (
             <DropDown 
@@ -17,6 +17,10 @@ class MoreMenu extends React.Component {
             />
         )
     }
+}
+
+interface Props {
+    className?: string;
 }
 
 export default MoreMenu;

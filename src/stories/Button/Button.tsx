@@ -1,15 +1,23 @@
+// Button.tsx
+
 import * as React from 'react';
 import "./Button.css";
-import ClassyName from '../common/ClassyName';
+import ClassyName from '../../common/ClassyName';
 
 // props 목록을 정의합니다.
 interface Props {
     className?: string;
     onClick?: React.MouseEventHandler<HTMLAnchorElement>;
     color?: "green" | "greenGradient" | "grey" | "blue";
-    size?: "s" | "m" | "l";
+    size?: 'longFat' | 'long' | 'shortFat' | 'short' | 'mini' | 'round';
     children?: any;
 }
+
+/**
+ * 이    름 : Button
+ * 작 성 자 : 임영우, 라강인
+ * 설    명 : 
+ */
 
 class Button extends React.Component<Props> {
 

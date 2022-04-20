@@ -1,7 +1,7 @@
 // DropDownButton.tsx
 import React from 'react';
 import DropDown from './DropDown';
-import Button from './Button';
+import Button from './Button/Button';
 
 class DropDownButton extends React.Component {
     render() {

@@ -1,0 +1,90 @@
+
+/*#### Card__Body_a ####*/
+.Card__Body_a{
+  text-align:center;
+  border-bottom: 1px solid #eaeaea;
+  width:30rem;
+}
+
+.Card__Title_a{
+  font-size: 1.6rem;
+  font-weight:700;
+  color: var(--black);
+}
+
+.Card__Thumbnail_a{
+  width:12rem;
+  height :14.8rem;
+}
+
+.Card__ProgressBar{
+  margin: 1.6rem 0;
+}
+
+
+
+
+/*#### Card__Body_b ####*/
+.Card__Body_b{
+  width:26rem;
+  height: 15.6rem;
+  border:1px solid var(--grey);
+  overflow:hidden;
+  padding:2rem;
+}
+
+.Card__Thumnail_b{
+  width:100%;
+}
+
+
+
+
+/*#### Card__Body_c ####*/
+.Card__Body_c{
+  padding:2rem;
+}
+.Card__ExamLabel_c{
+  text-align: left;
+  color:#000;
+  font-size: 1.8rem;
+  font-weight:600;
+}
+
+.Card__ExamDate_c{
+  text-align: left;
+  color:rgb(143, 143, 143);
+  font-size:1.2rem;
+}
+
+.Card__ExamData_c{
+  display:flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding:0;
+}
+
+.Card__Data1_c{
+  list-style: none;
+  padding: 0;
+  margin-left: 1.2rem;;
+}
+
+.Card__Data2_c{
+  list-style: none;
+  padding: 0;
+}
+
+.Card__Data--number{
+  font-size:3.2rem;
+  color:#000;
+  line-height:3.6rem;
+  padding-bottom:1.2rem;
+  font-weight: 600;
+}
+
+.Card__Data--infomation{
+  color:rgb(143, 143, 143);
+  font-size:1.2rem;
+  font-weight: 500;
+}

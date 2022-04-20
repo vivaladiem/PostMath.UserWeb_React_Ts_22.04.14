@@ -1,0 +1,57 @@
+
+/* Common */
+
+div{
+  list-style: none;
+  display : inline-block;
+  padding:0;
+}
+
+.Card__Header{
+  display: flex;
+  position:relative;
+  width:27.6rem;
+  padding:1.6rem;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Card_empty{
+  margin-left:auto;
+}
+
+.Card__Difficulty{
+  margin-right:0.8rem;
+}
+
+/*#### Header_a ####*/
+.Card__FolderName{
+  font-size:1.3rem;
+  margin-left:0.8rem;
+  font-weight: 600;
+  color: #5F5F5F;
+}
+
+.Card__FolderIcon{
+  width: 2rem;
+  height: 1.6rem;
+  margin-left:0.8rem;
+}
+
+
+
+/*#### Header_b, Header_c ####*/
+.Card__PageLabel{
+  font-size: 1.4rem;
+  color:var(--green);
+  margin-left:0.4rem;
+}
+
+
+
+/*#### Header_c ####*/
+.Card__Dbimage{
+  margin: 0 0.8rem;
+}

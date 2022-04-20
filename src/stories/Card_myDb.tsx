@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Card from './Card/Card';
 import Card__Header_db from './Card__Header_db';
 import Card__Footer_db from './Card__Footer_db';
 

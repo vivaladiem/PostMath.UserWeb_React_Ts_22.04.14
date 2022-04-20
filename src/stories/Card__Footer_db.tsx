@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from './Button';
+import Button from './Button/Button';
 
 
 class Card__Footer_db extends React.Component<Props, State> {
@@ -29,10 +29,10 @@ class Card__Footer_db extends React.Component<Props, State> {
         // 버튼을 정의합니다. // 이렇게밖에 안되나...? 개선 고민해보자.
         let buttons;
         if (this.props.progress == 1) {
-            buttons = <Button size="l" color="grey">문제선택 및 결제</Button>
+            buttons = <Button size="long" color="grey">문제선택 및 결제</Button>
         }
         else if (this.props.progress == 2) {
-            buttons = <Button size="l" color="green">문제선택 및 결제</Button>
+            buttons = <Button size="long" color="green">문제선택 및 결제</Button>
         }
         else if (this.props.progress == 3) {
             buttons =

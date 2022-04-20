@@ -1,13 +1,15 @@
 import * as React from 'react';
 import './Card.css';
-import Card__Header from './Card__Header_question';
-import ClassyName from '../common/ClassyName';
+import ClassyName from '../../common/ClassyName';
 
-
+/**
+ * 이    름 : Card
+ * 작 성 자 : 임영우, 라강인
+ * 설    명 : 카드 컴포넌트의 틀
+ */
 
 class Card extends React.Component<Props> {
 
-    static progress = { 1: "정보입력중", 2: "변환중", 3: "변환완료", 4: "추가변환중" };
 
     render() {
         let cardCn = new ClassyName("Card");
