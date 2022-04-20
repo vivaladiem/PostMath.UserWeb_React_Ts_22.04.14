@@ -43,17 +43,25 @@ class DropDown extends React.Component<Props, State> {
     
 
     render() {
-        let moreMenuClassName = new ClassyName("MoreMenu");
+        // 클래스이름을 구성한다.
+        let moreMenuClassName = new ClassyName("DropDown");
         if (this.state.open) {
             moreMenuClassName.modifier("open");
         }
-
-        const list = this.props.items.map((item, index) => {
-            let className = new ClassyName("MoreMenu__Item");
+        
+        // 버튼을 구성한다.
+        let button = this.props.button;
+        if (this.props.hideButton && this.state.open) {
+            button = null;
+        }
+        
+        
+        // 리스트를 구성한다.
+        const items = this.props.items.map((item, index) => {
+            let className = new ClassyName("DropDown__Item");
             if (item.color == 'red') {
                 className.modifier(item.color);
             }
-
             return <li 
                 className={className.getResult()} 
                 key={index} 
@@ -63,16 +71,17 @@ class DropDown extends React.Component<Props, State> {
             }
         );
 
+        let list = null;
+        if (this.state.open) {
+            list =  <ul className="DropDown__List">
+                            {items}
+                        </ul>
+        }
+
         return (
             <div className={moreMenuClassName.getResult()} onClick={this.onClick} onBlur={this.onBlur} tabIndex={0} >
-                {this.props.button}
-                {this.state.open ? 
-                <ul className="MoreMenu__List">
-                    {list}
-                </ul>
-                :
-                null
-                }
+                {button}
+                {list}
             </div>
         )
     }
@@ -82,11 +91,12 @@ export default DropDown;
 
 interface Props {
     button: React.ReactNode;
+    hideButton?: boolean,
     items: Array<{
         itemName: string,
         color?: 'red',
         onClick?: (e?: React.SyntheticEvent) => void
-    }>
+    }>,
 }
 
 interface State {

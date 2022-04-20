@@ -5,7 +5,7 @@ import ClassyName from '../common/ClassyName';
 // props 목록을 정의합니다.
 interface Props {
     className?: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
     color?: "green" | "greenGradient" | "grey" | "blue";
     size?: "s" | "m" | "l";
     children?: any;
@@ -32,8 +32,8 @@ class Button extends React.Component<Props> {
 
 
         return (
-            <button className= { className.getResult() } 
-            onClick = { this.props.onClick }> { this.props.children } </button> // props에 쓰이는 모든 것은 위의 interface Props에서 정의해줘야합니다.(children 제외)
+            <a className= { className.getResult() } 
+            onClick = { this.props.onClick }> { this.props.children } </a> // props에 쓰이는 모든 것은 위의 interface Props에서 정의해줘야합니다.(children 제외)
         )
     }
 }

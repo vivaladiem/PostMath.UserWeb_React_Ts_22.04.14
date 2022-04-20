@@ -1,57 +1,44 @@
-/* MoreMenu.css*/
+/* DropDown.css*/
 
-.MoreMenu {
+.DropDown {
     display: inline-block;
     border: 1px solid transparent;
+    overflow: hidden;
 }
 
-.MoreMenu--open {
+.DropDown--open {
     border: 1px solid var(--color-black);
     border-radius: 4px;
 }
 
-.MoreMenu__List {
+
+.DropDown__List {
     list-style: none;
     
     background-color: var(--color-white);
     margin: 0;
-    /* visibility: hidden;
-    opacity: 0; */
-    transition: all .2s ease-in-out;
     padding: 0;
     position: relative;
-    animation-name: slowlyShown;
-    animation-duration: .8s;
+    animation-name: moveFromTop;
+    animation-duration: .2s;
     animation-fill-mode: both;
     animation-direction: alternate;
+    
 }
 
 
 
-.MoreMenu__Item {
+
+.DropDown__Item {
     text-decoration: none;
     padding: 1rem 1.6rem;
     transition: color .2s;
 }
 
-.MoreMenu__Item--red {
+.DropDown__Item--red {
     color: var(--color-error);
 }
 
-.MoreMenu__Item:hover {
+.DropDown__Item:hover {
     color: var(--color-primary);
-}
-
-.MoreMenu__Cover {
-    display: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.MoreMenu__Cover--open {
-    display: block;
 }

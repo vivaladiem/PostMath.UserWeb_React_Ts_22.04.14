@@ -12,7 +12,9 @@ class MoreMenu extends React.Component {
                     {itemName: "해설 PDF 추가", onClick: (e) => {alert("해설 PDF 추가");}}, 
                     {itemName: "PDF 삭제", color: 'red', onClick: () => {alert("PDF 삭제");}}
                 ]
-            }/>
+                }
+                hideButton={true}
+            />
         )
     }
 }
