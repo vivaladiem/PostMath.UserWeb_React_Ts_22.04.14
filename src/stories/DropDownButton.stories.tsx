@@ -10,4 +10,8 @@ export default {
     component: DropDownButton
 } as ComponentMeta<typeof DropDownButton>;
 
-export const 드롭다운버튼 : ComponentStory<typeof DropDownButton> = () => <DropDownButton />
+export const 드롭다운버튼 : ComponentStory<typeof DropDownButton> = () => <DropDownButton items={[
+    {itemName: "PDF", onClick: (e)=>{alert("PDF 업로드")}},
+    {itemName: "HWP", onClick: (e)=>{alert("HWP 업로드")}},
+    {itemName: "IMG", onClick: (e)=>{alert("IMG 업로드")}}
+]}/>

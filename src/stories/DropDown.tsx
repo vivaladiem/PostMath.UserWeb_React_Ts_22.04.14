@@ -25,19 +25,19 @@ class DropDown extends React.Component<Props, State> {
         // 이벤트 핸들러를 바인드한다.
         this.onClick = this.onClick.bind(this);
         this.onBlur = this.onBlur.bind(this);
-
+        
     }
 
     onClick() {
         this.setState(prevState => ({
             open: !prevState.open
-        }))
+        }));
     }
 
     onBlur(e: React.SyntheticEvent) {
         this.setState(() => ({
             open: false
-        }))
+        }));
     }
 
     
@@ -48,13 +48,12 @@ class DropDown extends React.Component<Props, State> {
         if (this.state.open) {
             moreMenuClassName.modifier("open");
         }
-        
+
         // 버튼을 구성한다.
-        let button = this.props.button;
-        if (this.props.hideButton && this.state.open) {
+        let button = this.props.renderButton(this.state.open);
+        if (this.props.willHideButton && this.state.open) {
             button = null;
         }
-        
         
         // 리스트를 구성한다.
         const items = this.props.items.map((item, index) => {
@@ -89,16 +88,18 @@ class DropDown extends React.Component<Props, State> {
 
 export default DropDown;
 
-interface Props {
-    button: React.ReactNode;
-    hideButton?: boolean,
+export interface Props {
+    renderButton: (isOpen?: boolean) => React.ReactNode;
+    willHideButton?: boolean;
     items: Array<{
         itemName: string,
         color?: 'red',
         onClick?: (e?: React.SyntheticEvent) => void
-    }>,
+    }>;
 }
 
 interface State {
     open: boolean;
 }
+
+export type Items = Props['items'];

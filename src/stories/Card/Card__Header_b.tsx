@@ -35,7 +35,10 @@ class Card__Header_b extends Component<Props> {
           <span className='Card_empty'></span>
           <img className='Card__Difficulty' src={difficultyData} />
           <Checkbox_favorite id_data='f_h_b' />     {/*ID 값을 입력해야합니다.*/}
-          <Morelist />
+          <Morelist items={[
+            {itemName: "해설 PDF 추가", onClick: e=>{alert("해설 PDF 추가");}},
+            {itemName: "PDF 삭제", color: 'red', onClick: e=>{alert("PDF 삭제");}}
+          ]}/>
         </div>
       </div>
     )

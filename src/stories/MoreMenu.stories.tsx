@@ -8,4 +8,7 @@ export default {
     component: MoreMenu
 } as ComponentMeta<typeof MoreMenu>
 
-export const 더보기메뉴: ComponentStory<typeof MoreMenu> = () => <MoreMenu />
+export const 더보기메뉴: ComponentStory<typeof MoreMenu> = () => <MoreMenu items={[
+    {itemName: "해설 PDF 추가", onClick: e=>{alert("해설 PDF 추가");}},
+    {itemName: "PDF 삭제", color: 'red', onClick: e=>{alert("PDF 삭제");}}
+]} />

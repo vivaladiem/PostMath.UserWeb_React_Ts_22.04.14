@@ -3,9 +3,9 @@
 .DropDownButton__Arrow {
     margin-left: 0.6rem;
     vertical-align: text-top;
-    transition: all .4s;
+    transition: all .2s;
 }
 
 .DropDownButton__Arrow--open {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }

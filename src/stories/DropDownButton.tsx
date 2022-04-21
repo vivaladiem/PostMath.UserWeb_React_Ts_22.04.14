@@ -1,26 +1,35 @@
 // DropDownButton.tsx
 import React from 'react';
-import DropDown from './DropDown';
+import DropDown,  {Items} from './DropDown';
 import Button from './Button/Button';
 import './DropDownButton.css';
 import ClassyName from '../common/ClassyName';
 
 
-class DropDownButton extends React.Component {
+class DropDownButton extends React.Component<Props> {
     render() {
-        let arrowClassName = new ClassyName("DropDownButton__Arrow");
         
         return (
-            <DropDown 
-            button={<Button color="green">파일 업로드{<img className="DropDownButton__Arrow" src="./img/icon_arrow.png"/> }</Button>}
-            items={[
-                {itemName: "PDF", onClick: (e) => {alert('PDF 업로드');}},
-                {itemName: "HWP", onClick: (e) => {alert("HWP 업로드");}}
-            ]}
+            <DropDown
+                renderButton = { isOpen => {
+                    let arrowClassName = new ClassyName("DropDownButton__Arrow");
+                    if (isOpen) {
+                        arrowClassName.modifier("open");
+                    }
+                    return <Button className="DropDown__Button" color="green">
+                            파일 업로드
+                            {<img className={arrowClassName.getResult()} src="./img/icon_arrow.png"/> }
+                        </Button>
+                }}
+                items={this.props.items}
             />
         )
     }
 }
-// todo) DropDown을 lifting state up 방식으로 변경하기
+
+
+interface Props {
+    items: Items;
+}
 
 export default DropDownButton;
