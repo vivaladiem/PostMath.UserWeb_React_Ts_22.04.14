@@ -1,11 +1,7 @@
 
 /* Common */
 
-div{
-  list-style: none;
-  display : inline-block;
-  padding:0;
-}
+
 
 .Card__Header{
   display: flex;

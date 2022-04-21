@@ -1,12 +1,6 @@
 @import './abstracts/variables.css';
 @import './base/animations.css';
+@import './base/base.css';
 
 /* @forward './abstracts/variables'; */
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-}
