@@ -35,8 +35,8 @@
     transition: color .2s;
 }
 
-.DropDown__Item--red {
-    color: var(--color-error);
+.DropDown__Item--color--red {
+    color: var(--color-tertiary);
 }
 
 .DropDown__Item:hover {

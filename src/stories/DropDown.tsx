@@ -60,7 +60,7 @@ class DropDown extends React.Component<Props, State> {
         const items = this.props.items.map((item, index) => {
             let className = new ClassyName("DropDown__Item");
             if (item.color == 'red') {
-                className.modifier(item.color);
+                className.modifier("color", item.color);
             }
             return <li 
                 className={className.getResult()} 
@@ -74,8 +74,8 @@ class DropDown extends React.Component<Props, State> {
         let list = null;
         if (this.state.open) {
             list =  <ul className="DropDown__List">
-                            {items}
-                        </ul>
+                        {items}
+                    </ul>
         }
 
         return (

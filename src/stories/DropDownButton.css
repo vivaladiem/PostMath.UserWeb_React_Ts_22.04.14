@@ -1,0 +1,11 @@
+/* DropDownButton.css */
+
+.DropDownButton__Arrow {
+    margin-left: 0.6rem;
+    vertical-align: text-top;
+    transition: all .4s;
+}
+
+.DropDownButton__Arrow--open {
+    transform: rotate(180deg);
+}
