@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* Define what 1 rem is. */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
