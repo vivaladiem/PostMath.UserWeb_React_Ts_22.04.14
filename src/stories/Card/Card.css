@@ -4,7 +4,7 @@
     margin: 0 1rem 2rem 1rem;
     min-height:25.2rem;
     width:30rem;
-    box-shadow: 0 0 0.8rem 0 rgba(var(--color-black-rgb), .12);
+    box-shadow: 0 0 0.8rem 0 rgba(var(--color-black-rgb), .07);
     font-size: 1.2rem;
     font-weight:500;
     text-align: center;
@@ -31,21 +31,28 @@
   border-bottom: 1px solid var(--color-grey-1);
 }
 
+.Card__Info {
+  display: flex;
+  margin-left: 1.2rem;
+}
+
 .Card__RegisteredDateContainer {
-  float: left;
+  flex: 1;
+  text-align: left;
 }
 
 .Card__RegisteredDateLabel {
-  margin-right: 8px;
+  margin-right: 0.8rem;
   font-weight: bold;
 }
 
 .Card__StageContainer {
-  float: right;
+  flex: 1;
+  text-align: left;
 }
 
 .Card__StageLabel {
-  margin-right: 8px;
+  margin-right: 0.8rem;
   font-weight: bold;
 }
 
@@ -55,4 +62,9 @@
 
 .Card__Button {
   flex: 1;
+  padding: 0;
+}
+
+.Card__Button:not(:last-child) {
+  margin-right: 0.8rem;
 }

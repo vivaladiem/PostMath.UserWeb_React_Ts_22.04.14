@@ -21,31 +21,27 @@ class CardMydb extends Component<Props, State> {
     }
   }
             
-  /*
-            folder={1}
-            stage={DbstageData}
-            id_data='h_id'
-            */
-
-  
-
   render() {
 
     // 더보기 메뉴 구성
-    let moreMenuItems = null;
+    let moreMenu = null;
     if (this.props.stage == Stage.TYPE_COMPLETE) {
-      moreMenuItems = 
-      <ul className="MoreMenu__List">
-          <li className="MoreMenu__Item">해설 PDF 추가</li>
-          <li className="MoreMenu__Item MoreMenu__Item--color--red">PDF 삭제</li>
-        </ul>;
+      moreMenu = <MoreMenu className="Card__MoreMenu">
+        <ul className="MoreMenu__List">
+            <li className="MoreMenu__Item">해설 PDF 추가</li>
+            <li className="MoreMenu__Item MoreMenu__Item--color--red">PDF 삭제</li>
+          </ul>
+      </MoreMenu>;
+
     } else if (this.props.stage == Stage.TRANSFORMED) {
-      moreMenuItems = 
+      moreMenu = 
+      <MoreMenu className="Card__MoreMenu">
         <ul className="MoreMenu__List">
           <li className="MoreMenu__Item">추가 한글 변환</li>
           <li className="MoreMenu__Item">해설 PDF 추가</li>
           <li className="MoreMenu__Item MoreMenu__Item--color--red">PDF 삭제</li>
-        </ul>;
+        </ul>
+      </MoreMenu>
     }
 
 
@@ -84,7 +80,7 @@ class CardMydb extends Component<Props, State> {
             <img src="./img/folder_icon.png" alt="Folder Icon" className="Card__FolderIcon" />
             <span className="Card__Folder">폴더1</span>
             <Checkbox_favorite className="Card__Checkbox_favorite" id_data='1' />
-            <MoreMenu className="Card__MoreMenu">{moreMenuItems}</MoreMenu>
+            {moreMenu}
           </div>}
           body={
             <div className="Card__Body">
@@ -113,8 +109,8 @@ class CardMydb extends Component<Props, State> {
 
 export default CardMydb;
 
-enum Stage {
-  TYPING,
+export enum Stage {
+  TYPING = 0,
   TYPE_COMPLETE,
   TRANSFORMING,
   TRANSFORMED,
@@ -123,8 +119,8 @@ enum Stage {
 
 interface Props {
   questionFile?: any; // 나중엔 엔티티로 바껴야.
-  onChecked?: (isChecked : Boolean) => void;
-  onStarred?: (isStarred: Boolean) => void;
+  onChecked?: (isChecked : Boolean) => void; // 나중엔 문제집?의 id까지 줘서 어떤 문제집?인지 알 수 있게 해야.
+  onStarred?: (isStarred: Boolean) => void; // 마찬가지.
   stage: Stage;
 }
 
