@@ -34,13 +34,9 @@ class Card extends React.Component<Props> {
 interface Props {
 
     // 구성요소
-    header: React.ReactNode;
+    header?: React.ReactNode;
     body: React.ReactNode;
     footer?: React.ReactNode;
-
-    color?: 'white' | 'grey';
-
-
     className?: string;
 
 }

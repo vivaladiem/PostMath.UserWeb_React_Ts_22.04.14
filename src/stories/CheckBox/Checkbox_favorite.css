@@ -1,4 +1,4 @@
-.Checkbox--favorite label{
+.Checkbox_favorite label{
   display: inline-block;
   height: 2.4rem;  
   width:2.4rem;
@@ -7,15 +7,15 @@
   cursor:pointer;
 }
 
-.Checkbox--favorite input[name="check--favorite"]:checked + label{
+.Checkbox_favorite input[name="check--favorite"]:checked + label{
   display: inline-block;
   height: 2.4rem;  
   width:2.4rem;
-  background-image: url(/public/img/fav_on.svg);
+  background-image: url('/public/img/star_on(green).svg');
   background-repeat: no-repeat;
   cursor:pointer;
 }
 
-.Checkbox--favorite input[name="check--favorite"]{
+.Checkbox_favorite input[name="check--favorite"]{
   display: none;
 }

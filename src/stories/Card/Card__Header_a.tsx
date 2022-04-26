@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
-import Checkbox from '../CheckBox/Checkbox';
-import Checkbox_favorite from '../CheckBox/Checkbox_favorite';
+import Checkbox from '../Checkbox/Checkbox';
+import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
 import Morelist from '../DropDown/MoreMenu';
 
 /*
@@ -42,7 +42,7 @@ class Card__Header_a extends Component<Props> {
     return (
       <div className={className.getResult()}>
         <div className='Card__Header'>
-          <Checkbox id_data={IdData} />
+          <Checkbox isChecked={false} id_data={IdData} />
           <img className='Card__FolderIcon' src='img/folder_icon.png' />
           <span className='Card__FolderName'>{Card__Header_a.folder[this.props.folder]}</span>
           <span className='Card_empty'></span>

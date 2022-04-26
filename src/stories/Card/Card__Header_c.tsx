@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Checkbox from '../CheckBox/Checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
-import Checkbox_favorite from '../CheckBox/Checkbox_favorite';
+import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
 
 interface Props {
   difficulty: 1 | 2 | 3 | 4;  // 난이도별 이미지 
@@ -28,7 +28,7 @@ class Card__Header_c extends Component<Props> {
     return (
       <div className={className.getResult()}>
         <div className='Card__Header'>
-          <Checkbox id_data='h_3' />             {/*ID 값을 입력해야합니다.*/}
+          <Checkbox isChecked={false} id_data='h_3' />             {/*ID 값을 입력해야합니다.*/}
           <p className='Card__PageLabel'>1번</p>
           <img className='Card__Dbimage' src='img/Dbimage.svg' />
           <img className='Card__Difficulty' src={difficultyData} />

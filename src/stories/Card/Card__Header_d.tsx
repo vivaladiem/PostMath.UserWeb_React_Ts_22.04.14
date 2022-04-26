@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Checkbox_favorite from '../CheckBox/Checkbox_favorite';
+import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
 import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
 
