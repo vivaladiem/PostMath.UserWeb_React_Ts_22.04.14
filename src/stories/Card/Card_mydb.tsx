@@ -79,10 +79,7 @@ class CardMydb extends Component<Props, State> {
             <Checkbox className="Card__Checkbox" isChecked={this.state.isChecked} id_data='1' />
             <img src="./img/folder_icon.png" alt="Folder Icon" className="Card__FolderIcon" />
             <span className="Card__Folder">폴더1</span>
-<<<<<<< HEAD
             <Checkbox_favorite className="Card__Checkbox_favorite" isStarred={this.state.isStarred} id_data='2' />
-=======
->>>>>>> e9d5f4806e9fcafaf292f32ec196e49810f5a913
             {moreMenu}
           </div>}
           body={
