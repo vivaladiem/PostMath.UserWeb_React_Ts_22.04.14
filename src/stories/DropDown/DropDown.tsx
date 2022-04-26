@@ -19,9 +19,12 @@ export function DropDown(props : Props) {
     const [open, setOpen] = useState(false);
 
     // 클래스이름을 구성한다.
-    let moreMenuClassName = new ClassyName("DropDown");
+    let className = new ClassyName("DropDown");
     if (open) {
-        moreMenuClassName.modifier("open");
+        className.modifier("open");
+    }
+    if (props.className) {
+        className.externalClassName(props.className);
     }
 
     // 버튼을 구성한다.
@@ -31,7 +34,7 @@ export function DropDown(props : Props) {
     }
 
         return (
-            <div className={moreMenuClassName.getResult()} onClick={()=>setOpen(!open)} onBlur={()=>setOpen(false)} tabIndex={0} >
+            <div className={className.getResult()} onClick={()=>setOpen(!open)} onBlur={()=>setOpen(false)} tabIndex={0} >
                 {button}
                 {open ? props.children : null}
             </div>
@@ -41,6 +44,7 @@ export function DropDown(props : Props) {
 export default DropDown;
 
 export interface Props {
+    className?: string;
     renderButton: (isOpen?: boolean) => React.ReactNode;
     willHideButton?: boolean;
     children: React.ReactNode;

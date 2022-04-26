@@ -11,7 +11,10 @@ class Checkbox_favorite extends Component<Props> {
 
   render() {
 
-    let className = new ClassyName('Checkbox--favorite')
+    let className = new ClassyName('Checkbox_favorite')
+    if (this.props.className) {
+      className.externalClassName(this.props.className);
+    }
 
     return (
       <span className={className.getResult()}>
@@ -23,3 +26,7 @@ class Checkbox_favorite extends Component<Props> {
 }
 
 export default Checkbox_favorite;
+
+interface Props {
+  className?: string;
+}

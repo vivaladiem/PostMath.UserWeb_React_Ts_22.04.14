@@ -17,7 +17,11 @@
     --color-white: #fff;
     --color-white-rgb: 255, 255, 255;
 
+    --color-grey-line: #f2f2f2;
+    --color-grey-light-1: #f6f6f6;
+    --color-grey-light-2: #e1e1e1;
     --color-grey: #c4c4c4;
+    --color-grey-dark-1: #999898;
 
     --color-black: #1C1C1E;
     --color-black-rgb: 28, 28, 30;

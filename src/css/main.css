@@ -1,6 +1,8 @@
 @import './abstracts/variables.css';
 @import './base/animations.css';
 @import './base/base.css';
+@import './base/util.css';
+@import './base/typography.css';
 
 /* @forward './abstracts/variables'; */
 

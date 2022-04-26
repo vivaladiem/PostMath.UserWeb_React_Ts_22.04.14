@@ -1,4 +1,4 @@
-.Checkbox--favorite label{
+.Checkbox_favorite label{
   display: inline-block;
   height: 2.4rem;  
   width:2.4rem;
@@ -7,7 +7,7 @@
   cursor:pointer;
 }
 
-.Checkbox--favorite input[name="check--favorite"]:checked + label{
+.Checkbox_favorite input[name="check--favorite"]:checked + label{
   display: inline-block;
   height: 2.4rem;  
   width:2.4rem;
@@ -16,6 +16,6 @@
   cursor:pointer;
 }
 
-.Checkbox--favorite input[name="check--favorite"]{
+.Checkbox_favorite input[name="check--favorite"]{
   display: none;
 }

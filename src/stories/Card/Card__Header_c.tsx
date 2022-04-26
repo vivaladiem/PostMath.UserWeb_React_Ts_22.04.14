@@ -28,7 +28,7 @@ class Card__Header_c extends Component<Props> {
     return (
       <div className={className.getResult()}>
         <div className='Card__Header'>
-          <Checkbox id_data='h_3' />             {/*ID 값을 입력해야합니다.*/}
+          <Checkbox isChecked={false} id_data='h_3' />             {/*ID 값을 입력해야합니다.*/}
           <p className='Card__PageLabel'>1번</p>
           <img className='Card__Dbimage' src='img/Dbimage.svg' />
           <img className='Card__Difficulty' src={difficultyData} />

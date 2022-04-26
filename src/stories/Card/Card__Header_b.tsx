@@ -30,7 +30,7 @@ class Card__Header_b extends Component<Props> {
     return (
       <div className={className.getResult()}>
         <div className='Card__Header'>
-          <Checkbox id_data='h_b' />               {/*ID 값을 입력해야합니다.*/}
+          <Checkbox isChecked={false} id_data='h_b' />               {/*ID 값을 입력해야합니다.*/}
           <p className='Card__PageLabel'>1페이지 1번</p>
           <span className='Card_empty'></span>
           <img className='Card__Difficulty' src={difficultyData} />
