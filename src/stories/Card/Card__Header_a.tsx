@@ -3,7 +3,7 @@ import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
 import Checkbox from '../CheckBox/Checkbox';
 import Checkbox_favorite from '../CheckBox/Checkbox_favorite';
-import Morelist from '../MoreMenu';
+import Morelist from '../DropDown/MoreMenu';
 
 /*
 
@@ -30,11 +30,11 @@ class Card__Header_a extends Component<Props> {
     let IdData = this.props.id_data;
     if (this.props.stage == 1 || this.props.stage == 3) {
     }
-    else {
+    else {/*
       stageData = <Morelist items={[
         {itemName: "해설 PDF 추가", onClick: e=>{alert("해설 PDF 추가");}},
         {itemName: "PDF 삭제", color: 'red', onClick: e=>{alert("PDF 삭제");}}
-      ]} className='Card__MoreList' />
+      ]} className='Card__MoreList' />*/
     }
 
     let className = new ClassyName('Card__Header--modifier Card__Header_a')  // modifier 입력 
