@@ -11,7 +11,7 @@
   display: inline-block;
   height: 2.4rem;  
   width:2.4rem;
-  background-image: url(/public/img/fav_on.svg);
+  background-image: url('/public/img/star_on(green).svg');
   background-repeat: no-repeat;
   cursor:pointer;
 }

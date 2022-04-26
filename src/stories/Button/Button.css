@@ -60,5 +60,5 @@
 }
 
 .Button:not(:last-child) {
-  margin-bottom: 1.2rem;
+  margin-right: 1.2rem;
 }

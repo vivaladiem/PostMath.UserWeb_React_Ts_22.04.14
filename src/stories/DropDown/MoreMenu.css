@@ -1,10 +1,16 @@
 /* MoreMenu.css */
 
+.MoreMenu {
+}
+
 .MoreMenu__List {
     border: 1px solid var(--color-black);
     border-radius: 4px;
     background-color: var(--color-white);
     list-style: none;
+    text-align: left;
+    position: absolute;
+    width: fit-content
 }
 
 .MoreMenu__Item {
@@ -14,4 +20,8 @@
 
 .MoreMenu__Item:hover {
     color: var(--color-primary);
+}
+
+.MoreMenu__Item--color--red {
+    color: var(--color-tertiary);
 }

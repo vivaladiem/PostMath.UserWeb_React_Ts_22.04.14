@@ -14,7 +14,7 @@ export function MoreMenu(props : Props) {
     return (
         <DropDown className={className.getResult()}
             renderButton={() => <img className="MoreMenu__Button" src="./img/icon_more.png" alt="more menu" />}
-            willHideButton={true}>
+            willHideButton={false}>
                 {props.children}
         </DropDown>
             
