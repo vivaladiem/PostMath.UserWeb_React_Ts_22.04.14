@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 
 
 
-class CardMydb extends Component<Props, State> {
+class Card_myDb extends Component<Props, State> {
 
   static stageText = ["정보입력중", "정보입력완료", "변환중", "변환완료", "추가변환중"];
 
@@ -95,7 +95,7 @@ class CardMydb extends Component<Props, State> {
                   <span className="Card__RegisteredDateLabel">등록일</span><span className="Card__RegisteredDate">2021-09-23</span>
                 </div>
                 <div className="Card__StageContainer">
-                  <span className="Card__StageLabel">진행상태</span><span className="Card__Stage">{CardMydb.stageText[this.props.stage]}</span>
+                  <span className="Card__StageLabel">진행상태</span><span className="Card__Stage">{Card_myDb.stageText[this.props.stage]}</span>
                 </div>
               </div>
               <div className="Card__ButtonContainer">{buttons}</div>
@@ -107,7 +107,7 @@ class CardMydb extends Component<Props, State> {
   }
 }
 
-export default CardMydb;
+export default Card_myDb;
 
 export enum Stage {
   TYPING = 0,
