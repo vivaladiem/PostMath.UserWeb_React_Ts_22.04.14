@@ -1,6 +1,6 @@
 // MoreMenu.tsx
 import React from 'react';
-import DropDown from './DropDown';
+import DropDownBase from './DropDownBase';
 import './MoreMenu.css';
 import ClassyName from '../../common/ClassyName';
 
@@ -12,11 +12,11 @@ export function MoreMenu(props : Props) {
     }
 
     return (
-        <DropDown className={className.getResult()}
+        <DropDownBase className={className.getResult()}
             renderButton={() => <img className="MoreMenu__Button" src="./img/icon_more.png" alt="more menu" />}
             willHideButton={false}>
                 {props.children}
-        </DropDown>
+        </DropDownBase>
             
     )
 }
