@@ -12,7 +12,7 @@ class Checkbox extends Component<Props> {
   onClicked = (e: React.SyntheticEvent) => {
     if (this.props.onClicked) {
       this.props.onClicked(this.props.isChecked);
-    }
+    } 
   }
 
   render() {

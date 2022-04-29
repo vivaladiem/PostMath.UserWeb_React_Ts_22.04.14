@@ -3,6 +3,12 @@ import React, { SyntheticEvent } from 'react';
 import ClassyName from '../../common/ClassyName';
 import DropDown from './DropDown';
 
+/**
+ * 이      름 : DropDownList(리스트 드롭다운)
+ * 기      능 : 문자열만을 항목으로 가지는 드롭다운
+ * 작  성  자 : 임영우
+ * 작성  일자 : 22.04.27
+ */
 class DropDownList extends React.Component<Props, State> {
 
     constructor(props: Props) {
@@ -14,7 +20,7 @@ class DropDownList extends React.Component<Props, State> {
         }
     }
 
-    onSelect(index: number, e: SyntheticEvent<HTMLLIElement>) {
+    private onSelect(index: number, e: SyntheticEvent<HTMLLIElement>) {
         // 선택 항목 위치 상태를 변경한다.
         this.setState({
             selectedIndex: index,
@@ -67,13 +73,6 @@ class DropDownList extends React.Component<Props, State> {
 }
 
 export default DropDownList;
-
-/**
- * items : [{
- *      label: string
- *      color?: 'red'
- * }]
- */
 
 interface Props {
     label: string;
