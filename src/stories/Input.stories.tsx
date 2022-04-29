@@ -7,11 +7,13 @@ export default {
   component : Input
 } as ComponentMeta<typeof Input>
 
-const Template: ComponentStory<typeof Input> = (args) => <Input{...args}/>;
+const Template: ComponentStory<typeof Input> = (args) => <Input error={(value) => {
+  if (value.includes('error')) return true;
+}} {...args}/>;
 
 export const InputComponent = Template.bind({})
 InputComponent.args ={
-  placeholder:'InputComponent',
-  backgroundcolor:'none',
-  button: <img src='img/plus.svg' />
+  placeholder:'텍스트를 입력하세요.',
+  size: 'large',
+  button: true
 };
