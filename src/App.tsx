@@ -3,7 +3,7 @@ import Button from './stories/Button/Button';
 
 function App() {
 
-  createElement
+  //createElement
   return (
     <div className="App">
       <Button>Button</Button>

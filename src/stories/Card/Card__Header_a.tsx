@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
 import Checkbox from '../Checkbox/Checkbox';
-import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
+import Checkbox_favorite from '../CheckBox/Checkbox_favorite'
 import Morelist from '../DropDown/MoreMenu';
 
 /*
@@ -11,7 +11,6 @@ import Morelist from '../DropDown/MoreMenu';
    stage 1, 3 -> morelist 없음 
    stage 2 : 해설 PDF 추가, PDF 삭제
    stage 3, 5 : 추가 한글변환, 해설 PDF 추가 , PDF 삭제
-
 */
 
 interface Props {
