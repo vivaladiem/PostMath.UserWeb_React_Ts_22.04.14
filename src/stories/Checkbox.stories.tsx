@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import Checkbox from './Checkbox/Checkbox';
+import Checkbox from './CheckBox/Checkbox';
 
 export default {
   title: "체크박스",

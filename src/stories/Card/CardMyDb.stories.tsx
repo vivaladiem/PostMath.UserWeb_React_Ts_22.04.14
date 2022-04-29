@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
-import Card_myDb, {Stage} from './Card_mydb';
+import Card_myDb, {Stage} from './CardMyDb';
 
 export default {
     title: 'Card/Card_mydb',

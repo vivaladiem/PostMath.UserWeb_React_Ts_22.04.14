@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox from '../CheckBox/Checkbox';
 import ClassyName from '../../common/ClassyName';
 import './Card__Header.css'
-import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
+import Checkbox_favorite from '../CheckBox/Checkbox_favorite';
 
 interface Props {
   difficulty: 1 | 2 | 3 | 4;  // 난이도별 이미지 

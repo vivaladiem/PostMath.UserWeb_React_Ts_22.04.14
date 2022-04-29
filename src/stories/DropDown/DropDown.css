@@ -40,7 +40,7 @@
 }
 
 
-.DropDown > ul, .DropDown__List {
+.DropDown__List {
     margin-top: -1rem;
     position: relative;
     list-style: none;
@@ -53,13 +53,13 @@
     animation-duration: .2s;
 }
 
-.DropDown > ul > li, .DropDown__Item {
+.DropDown__Item {
     text-decoration: none;
     padding: 1rem 1.4rem;
     transition: color .2s;
 }
 
-.DropDown > ul > li:hover, .DropDown__Item:hover {
+.DropDown__Item:hover {
     color: var(--color-primary);
 }
 
