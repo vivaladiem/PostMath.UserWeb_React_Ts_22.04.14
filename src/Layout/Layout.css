@@ -1,0 +1,236 @@
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Side*/
+.Sidebar{
+  width:22rem;
+  height:100vh;
+  padding:3rem 3rem 6rem 3rem;
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  background-color:var(--color-black);
+  color:var(--color-white);
+}
+
+.Sidebar__Logo{
+  width:16rem;
+}
+
+.Sidebar__Menu{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin-top:7.2rem;
+  line-height:4rem;
+}
+
+.Sidebar__MenuItem{
+  font-size:2rem;
+  font-weight: 400;
+  cursor:pointer;
+}
+
+.Sidebar__MenuItem--selected{
+  font-size:2rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor:pointer;
+}
+
+.Sidebar__MenuSubItem {
+  font-size:1.4rem;
+  visibility: hidden;
+  height: 0;
+  padding-left: 0;
+  opacity: 0;
+}
+
+.Sidebar__MenuSubItem--open {
+  visibility: visible;
+  margin: 0.8rem 0;
+  line-height: 2.4rem;
+  min-height: 5rem;
+  font-size:1.4rem;
+  opacity: 1;
+  cursor:pointer;
+  visibility: inherit;
+  padding-left: 2rem;
+  transition-property: opacity, visibility, padding-left;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.Sidebar__SubItem{
+  font-size : 1.4rem;
+}
+
+.Sidebar__SubItem--selected,
+.Sidebar__SubItem:hover{
+  font-size : 1.4rem;
+  color: var(--color-primary);
+}
+
+.Sidebar__User{
+  width:100%;
+  height:6rem;
+  padding: 1.4rem 1.8rem;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color:#333333;
+}
+
+/*User*/ 
+.Sidebar__User {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 22rem;
+  height: 6rem;
+  background-color: #333;
+  padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+}
+
+.Sidebar__UserInfomation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  cursor: pointer;
+}
+
+.Sidebar__UserInfomationImg {
+  width: 3.2rem;
+  height: 3.2rem;
+  vertical-align: bottom;
+}
+
+.Sidebar__UserInfomationKong {
+  width: 2.2rem;
+  height: 2.2rem;
+  vertical-align: bottom;
+}
+
+.Sidebar__UserInfomationName {
+  color: whitesmoke;
+  font-weight: 400;
+  font-size: 1.4rem;
+  transition : 0.15s ease-in;
+}
+
+.Sidebar__UserInfomationName--selected {
+  color: whitesmoke;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  transition : 0.15s ease-in;
+}
+
+
+.Sidebar__UserInfomationPoint {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+.Sidebar__UserButton {
+  height: 2rem;
+  width: 2rem;
+  background-color: #333;
+  opacity: 0.3;
+  color: var(--color-primary);
+  transform: rotate(180deg);
+  transition-property: opacity, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.Sidebar__UserButton--open{
+  height: 2rem;
+  width: 2rem;
+  background-color: #333;
+  opacity: 1;
+  transition-property: opacity, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.Sidebar__UserPopup {
+  position: absolute;
+  left: 0;
+  color: #333;
+  padding: 2.1rem 3rem;
+  background-color: #222;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+.Sidebar__UserPopup--open {
+  opacity: 1;
+  visibility: inherit;
+  bottom: 6rem;
+  transition-property: opacity, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.Sidebar__UserList {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #8f8f8f;
+  transition: color 0.25s ease-in-out;
+}
+
+.Sidebar__UserListItem:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: color 0.25s ease-in-out;
+}
+
+
+/*Footer*/
+.Footer {
+  position: absolute;
+  left: 22rem;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 4rem 6rem;
+  background-color: #e5e5e5;
+  font-size: 0;
+  min-width: 70rem;
+}
+
+.Footer__Menu li {
+  display: inline-block;
+}
+
+.Footer__Menuitem {
+  cursor: pointer;
+  margin-right: 2rem;
+  font-weight: 550;
+  font-size: 1.4rem;
+  color: #4f4f4f;
+}
+
+.Footer__Infomation {
+  font-size: 1.2rem;
+  margin-top: 2.8rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  color: #8f8f8f;
+}
+
+.Footer__Infomation--bold {
+  font-weight: 600;
+}

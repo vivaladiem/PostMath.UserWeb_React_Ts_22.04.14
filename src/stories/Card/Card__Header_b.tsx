@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Card__Header.css';
 import ClassyName from '../../common/ClassyName';
-import Checkbox from '../Checkbox/Checkbox'
+import Checkbox from '../CheckBox/Checkbox'
 import Checkbox_favorite from '../CheckBox/Checkbox_favorite'
 import Morelist from '../DropDown/MoreMenu';
 

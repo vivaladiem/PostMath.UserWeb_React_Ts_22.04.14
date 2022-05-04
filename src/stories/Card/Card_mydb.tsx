@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Card from './Card'
-import Checkbox from '../Checkbox/Checkbox';
+import Checkbox from '../CheckBox/Checkbox';
 import MoreMenu from '../DropDown/MoreMenu';
-import Checkbox_favorite from '../Checkbox/Checkbox_favorite';
+import Checkbox_favorite from '../CheckBox/Checkbox_favorite'
 import Button from '../Button/Button';
 
 
