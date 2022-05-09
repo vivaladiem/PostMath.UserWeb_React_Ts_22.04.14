@@ -4,25 +4,23 @@ import ClassyName from '../../common/ClassyName';
 import Button from '../Button/Button';
 
 interface Props {
+  id: string;
+  type?: string;
+  name?: string;
   className?: string;
   placeholder?: string;
   size?: 'large' | 'normal';
   color?: 'white' | 'grey';
   button?: boolean;
-  icon?: boolean;
+  iconSrc?: string;
   onChange: (value : string) => void;
-  error?: (value: string) => (boolean | undefined);
-}
-
-interface State {
-  inputState: InputState;
-}
-
-enum InputState {
-  EMPTY = 0,
-  TYPING,
-  ERROR,
-  COMPLETE
+  isRequired?: false;
+  min?: number;
+  max?: number;
+  step?: number;
+  minLength?: number;
+  maxLength?: number;
+  pattern?: string;
 }
 
 /**
@@ -32,37 +30,15 @@ enum InputState {
  *  onChange : 값을 읽습니다.
  *  error : 에러상태를 판단하여 반환하는 함수를 넣으면 됩니다.
  */
-class Input extends Component<Props, State> {
+class Input extends Component<Props> {
 
   constructor(props: Props) {
     super(props);
 
-    this.state = {
-      inputState: InputState.EMPTY
-    }
   }
 
   private handleChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
     this.props.onChange(e.currentTarget.value);
-
-    if (e.currentTarget.value.length > 0) {
-      if (this.props.error && this.props.error(e.currentTarget.value)) {
-        this.setState({
-          inputState: InputState.ERROR
-        });
-      } else {
-        this.setState({
-          inputState: InputState.TYPING
-        })
-      }
-    } else {
-      this.setState({
-        inputState: InputState.EMPTY
-      })
-    }
-    
-    
-    
   }
 
   render() {
@@ -77,26 +53,29 @@ class Input extends Component<Props, State> {
       className.modifier('size', this.props.size)
     }
     if (this.props.color) {
-      className.modifier('color', 'grey')
+      className.modifier('color', this.props.color)
     }
 
     let button = null;
     if (this.props.button) {
       button = <Button className="Input__Button" size="small">확인</Button>
+      className.modifier('button');
     }
 
     //icon
-
-    //state
-    if (this.state.inputState == InputState.ERROR) {
-      className.modifier("error");
+    if (this.props.iconSrc) {
+      const input = document.querySelector<HTMLInputElement>(".Input");
+      if (input != null) {
+        input.style.setProperty('--icon-src', this.props.iconSrc);
+      }
+      className.modifier('icon');
     }
 
     return (
       <div className="Input__Container">
-        <input type="text" className={className.getResult()} placeholder={this.props.placeholder} onChange={this.handleChange} />
+        <input id={this.props.id} type={this.props.type} name={this.props.name} className={className.getResult()} placeholder={this.props.placeholder} onChange={this.handleChange} 
+        required={this.props.isRequired} min={this.props.min} max={this.props.max} minLength={this.props.minLength} maxLength={this.props.maxLength} pattern={this.props.pattern} />
         {button}
-        <img src="/img/icon_error.svg" alt="error" className="Input__IconError" />
       </div>
     )
   }

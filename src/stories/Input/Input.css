@@ -9,10 +9,9 @@
   display: inline-block;
   position:relative;
   height: 3.6rem;
-  outline: 0;
-  border: 1.5px solid var(--color-grey);
+  border: 1.5px solid rgba(0,0,0,0);
   background-color: var(--color-white);
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1.4rem;
   color:var(--color-black);
   caret-color:var(--color-primary);
@@ -20,7 +19,7 @@
 }
 
 .Input:focus {
-  /* outline: 1px solid var(--color-primary); */
+  outline: 1px solid var(--color-primary);
   border: 1.5px solid var(--color-primary);
 }
 
@@ -33,39 +32,42 @@
   height: 4.8rem;
 }
 
-.Input--error{
-  border: 1.5px solid var(--color-tertiary);
-  color: var(--color-tertiary);
+.Input--color--grey {
+  background-color: var(--color-grey-light-1);
 }
 
-.Input--error:focus{
+.Input:invalid {
   border: 1.5px solid var(--color-tertiary);
-  color:var(--color-tertiary);
+  background-image: url('../../../public/img/icon_error.svg');
+  background-repeat: no-repeat;
+  background-position: 96% 50%;
+  color: var(--color-tertiary);
   caret-color: var(--color-tertiary);
 }
 
-
-/* Input + Error && Button */
-
-.Input__IconError{
-  display: none;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+.Input:invalid:focus{
+  outline: 1.5px solid var(--color-tertiary);
+  border: 1.5px solid var(--color-tertiary);
 }
 
-.Input--error + .Input__IconError {
-  display: inline-block;
+
+.Input--button {
+  padding-right: 7.2rem;
 }
 
 .Input__Button {
   position: absolute;
-  right: 0px;
+  right: 0.6rem;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.Input--error + .Input__Button {
+.Input:invalid + .Input__Button {
   background-color: var(--color-tertiary);
+}
+
+.Input--icon {
+  background-image: var(--icon-src);
+  background-repeat: no-repeat;
+  background-position: 96% 50%;
 }
