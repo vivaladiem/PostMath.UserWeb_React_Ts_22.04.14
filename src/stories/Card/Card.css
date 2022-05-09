@@ -1,13 +1,13 @@
-.Card{
+.Card {
     display:inline-block;
     position:relative;
     margin: 0 1rem 2rem 1rem;
     min-height:25.2rem;
-    width:30rem;
     box-shadow: 0 0 0.8rem 0 rgba(var(--color-black-rgb), .07);
     font-size: 1.2rem;
     font-weight:500;
     text-align: center;
+    width: 33rem;
 }
 
 .Card > * {
@@ -62,7 +62,6 @@
 
 .Card__Button {
   flex: 1;
-  padding: 0;
 }
 
 .Card__Button:not(:last-child) {
