@@ -1,69 +1,80 @@
 import React, { Component } from 'react';
 import './Input.css'
 import ClassyName from '../../common/ClassyName';
+import Button from '../Button/Button';
 
 interface Props {
+  id: string;
+  type?: string;
+  name?: string;
   className?: string;
-  placeholder: string;
-  size: ('long' | 'short' | 'mini');
-  backgroundcolor?: 'grey' | 'none';
-  button?: React.ReactNode;
-}
-
-interface State {
-  error?: boolean;
+  placeholder?: string;
+  size?: 'large' | 'normal';
+  color?: 'white' | 'grey';
+  button?: boolean;
+  iconSrc?: string;
+  onChange: (value : string) => void;
+  isRequired?: false;
+  min?: number;
+  max?: number;
+  step?: number;
+  minLength?: number;
+  maxLength?: number;
+  pattern?: string;
 }
 
 /**
  * 이    름 : Input
  * 작 성 자 : 라강인, 임영우
  * 설    명 : 
+ *  onChange : 값을 읽습니다.
+ *  error : 에러상태를 판단하여 반환하는 함수를 넣으면 됩니다.
  */
-class Input extends Component<Props, State> {
+class Input extends Component<Props> {
+
+  constructor(props: Props) {
+    super(props);
+
+  }
+
+  private handleChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+    this.props.onChange(e.currentTarget.value);
+  }
 
   render() {
-
-    this.state = {
-      error: false
-    }
-
-
-    // 오류가 떳을 시 this.state.error 를 true 로 반환하는 메서드가 필요함.
-
 
     let className = new ClassyName('Input');
 
     if (this.props.className) {
       className.externalClassName(this.props.className)
     }
+
     if (this.props.size) {
-      className.modifier(this.props.size)
+      className.modifier('size', this.props.size)
     }
-    if (this.props.backgroundcolor) {
-      className.modifier('backgroundColor-grey')
-    }
-
-
-
-    let inputCn = new ClassyName("Input");
-    if (this.state.error) {
-      inputCn.modifier("error");
-    }
-    if (this.props.size) {
-      inputCn.modifier("size", this.props.size);
+    if (this.props.color) {
+      className.modifier('color', this.props.color)
     }
 
     let button = null;
     if (this.props.button) {
-      button =
-        <div className="Input__Button">
-          {this.props.button}
-        </div>
+      button = <Button className="Input__Button" size="small">확인</Button>
+      className.modifier('button');
+    }
+
+    //icon
+    if (this.props.iconSrc) {
+      const input = document.querySelector<HTMLInputElement>(".Input");
+      if (input != null) {
+        input.style.setProperty('--icon-src', this.props.iconSrc);
+      }
+      className.modifier('icon');
     }
 
     return (
-      <div className={inputCn.getResult()}>
-        <input type="text" className="Input__Form" placeholder={this.props.placeholder} />
+      <div className="Input__Container">
+        <input id={this.props.id} type={this.props.type} name={this.props.name} className={className.getResult()} placeholder={this.props.placeholder} onChange={this.handleChange} 
+        required={this.props.isRequired} min={this.props.min} max={this.props.max} minLength={this.props.minLength} maxLength={this.props.maxLength} pattern={this.props.pattern} />
         {button}
       </div>
     )

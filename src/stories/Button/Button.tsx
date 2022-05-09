@@ -26,8 +26,6 @@ interface Props {
 
 class Button extends React.Component<Props> {
 
-
-
     render() {
 
         let className = new ClassyName("Button");
@@ -73,8 +71,9 @@ class Button extends React.Component<Props> {
 
 
         return (
-            <a className= { className.getResult() } 
-            onClick = { this.props.onClick }> {icon} { this.props.children } {rightIcon} </a> // props에 쓰이는 모든 것은 위의 interface Props에서 정의해줘야합니다.(children 제외)
+            <a className= { className.getResult() } onClick = { this.props.onClick }> 
+                {icon} { this.props.children } {rightIcon} 
+            </a>
         )
     }
 }
