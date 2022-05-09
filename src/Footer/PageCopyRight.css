@@ -1,0 +1,32 @@
+.PageCopyRight{
+  color :var(--color-black);
+}
+
+.PageCopyRight__Head{
+  padding-bottom:5.2rem;
+  font-weight: 600;
+}
+
+.PageCopyRight__Article{
+  margin-bottom : 1.6rem;
+}
+
+.PageCopyRight__Paragraph{
+  font-size : 1.4rem;
+  color : var(--color-grey-dark-1);
+}
+
+.PageCopyRight__SubArticle{
+  font-size: 1.4rem;
+  font-weight:600;
+}
+
+.PageCopyRight__SubArticle + .PageCopyRight__SubArticle{
+  margin-top: 1.6rem;
+}
+
+.PageCopyRight__SubParagraph{
+  font-size:1.4rem;
+  color : var(--color-grey-dark-1);
+  margin: 1.6rem 0 1.6rem 2.4rem;
+}

@@ -1,9 +1,21 @@
+//SidebarData.tsx
+
+/**
+ * 이    름 : SidebarData
+ * 작 성 자 : 라강인
+ * 설    명 : SidebarItem 에 들어갈 데이터의 모음입니다.
+ *            path : 주소
+ *            item : 메뉴 이름
+ *            icon : 메뉴 앞에 오는 아이콘
+ *            subItem : 하위 메뉴 이름
+ */
+
 export default 
 [
   /*MY DB*/
   {
     "id":0,
-    "path":"#",
+    "path":"PageMyDb",
     "item":"My DB",
     "icon":null
   },
@@ -11,12 +23,13 @@ export default
   /*MY PAPER*/
   {
     "id":1,
-    "path":"#",
+    "path":"PageMyPaper",
     "item":"My Paper",
     "icon":null
-  },
+  }
   
-  /*PAY*/
+  /*
+  PAY
   {
     "id":2,
     "path":"#",
@@ -24,7 +37,7 @@ export default
     "icon":null,
     "subItem":[
       {
-        "path":"#",
+        "path":"PagePay",
         "subItem":"포인트 충전"
       },
       {
@@ -37,8 +50,8 @@ export default
       }
     ]
   },
-  
-  /*ETC*/
+
+  ETC
   {
     "id":3,
     "path":"#",
@@ -55,4 +68,5 @@ export default
       }
     ]
   }
+  */
 ]

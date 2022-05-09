@@ -1,0 +1,82 @@
+.PageRule{
+  color :var(--color-black);
+}
+
+.PageRule__Head{
+  padding-bottom:5.2rem;
+  font-weight: 600;
+}
+
+.PageRule__Article{
+  margin-bottom : 1.6rem;
+}
+
+.PageRule__Paragraph{
+  font-size : 1.4rem;
+  color : var(--color-grey-dark-1);
+}
+
+.PageRule__SubArticle{
+  font-size: 1.4rem;
+  font-weight:600;
+}
+
+.PageRule__SubArticle + .PageRule__SubArticle{
+  margin-top: 1.6rem;
+}
+
+.PageRule__SubParagraph{
+  font-size:1.4rem;
+  color : var(--color-grey-dark-1);
+  margin: 1.6rem 0 1.6rem 2.4rem;
+}
+
+.PageRule__Sub2-Paragraph{
+  font-size:1.4rem;
+  color : var(--color-grey-dark-1);
+  margin: 1.6rem 0 1.6rem 3.6rem;
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tg td {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  overflow: hidden;
+  padding: 1rem 0.5rem;
+  word-break: normal;
+}
+.tg th {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 1rem 0.5rem;
+  word-break: normal;
+}
+.tg .tg-c3ow {
+  width:48rem;
+  border-color: inherit;
+  text-align: center;
+  vertical-align: top;
+}
+.tg .tg-3uwl {
+  background-color: #dadada;
+  border-color: inherit;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+}
+
+.PageRule__PriceImage{
+  width:90rem;
+  margin:auto;
+}

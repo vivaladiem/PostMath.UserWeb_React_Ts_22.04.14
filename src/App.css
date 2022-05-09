@@ -1,0 +1,23 @@
+.App {
+  position: relative;
+  width: 100%;
+  min-width: 128rem;
+  padding-left: 22rem;
+  min-height: 100vh;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.Container {
+  position: relative;
+  z-index: 40;
+  min-height: 100vh;
+  width:106rem;
+  padding: 60px 60px 256px 60px;
+  margin:auto;
+}
+
+a{
+  text-decoration:none;
+  color: #4f4f4f;
+}

@@ -17,7 +17,9 @@ li {
   left:0;
   background-color:var(--color-black);
   color:var(--color-white);
+  z-index:100;
 }
+
 
 .Sidebar__Logo{
   width:16rem;
@@ -195,42 +197,4 @@ li {
   cursor: pointer;
   color: var(--color-primary);
   transition: color 0.25s ease-in-out;
-}
-
-
-/*Footer*/
-.Footer {
-  position: absolute;
-  left: 22rem;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  padding: 4rem 6rem;
-  background-color: #e5e5e5;
-  font-size: 0;
-  min-width: 70rem;
-}
-
-.Footer__Menu li {
-  display: inline-block;
-}
-
-.Footer__Menuitem {
-  cursor: pointer;
-  margin-right: 2rem;
-  font-weight: 550;
-  font-size: 1.4rem;
-  color: #4f4f4f;
-}
-
-.Footer__Infomation {
-  font-size: 1.2rem;
-  margin-top: 2.8rem;
-  line-height: 2.4rem;
-  font-weight: 500;
-  color: #8f8f8f;
-}
-
-.Footer__Infomation--bold {
-  font-weight: 600;
 }

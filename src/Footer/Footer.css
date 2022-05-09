@@ -1,0 +1,39 @@
+
+
+/*Footer*/
+.Footer {
+  position: absolute;
+  left: 22rem;
+  right: 0;
+  bottom: 0;
+  padding: 4rem 6rem;
+  background-color: #e5e5e5;
+  font-size: 0;
+  min-width: 70rem;
+  z-index:39;
+}
+
+.Footer__Menu li {
+  display: inline-block;
+}
+
+.Footer__Menuitem {
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 2rem;
+  font-weight: 550;
+  font-size: 1.4rem;
+  color: #4f4f4f;
+}
+
+.Footer__Infomation {
+  font-size: 1.2rem;
+  margin-top: 2.8rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  color: #8f8f8f;
+}
+
+.Footer__Infomation--bold {
+  font-weight: 600;
+}

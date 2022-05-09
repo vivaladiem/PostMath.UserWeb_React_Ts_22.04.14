@@ -1,48 +1,45 @@
+//Sidebar.tsx
+
 import React, { Component } from 'react'
 import ClassyName from '../common/ClassyName';
-import './Layout.css'
+import './Sidebar.css'
 import SidebarItem from './SidebarItem'
 import SidebarData from './SidebarData'
+import {Link, NavLink} from 'react-router-dom'
 
+/**
+ * 이    름 : Sidebar
+ * 작 성 자 : 라강인
+ * 설    명 : 
+ */
 
 interface Props{
 
 }
 
-interface state {
-  user : boolean
-  MenuItemIndex : number
+interface state{
+  user :boolean
 }
 
 class Sidebar extends Component<Props, state> {
 
   constructor(props :Props){
     super(props)
-
     this.state={
-      user : false,
-      MenuItemIndex : 0
+      user:false
     }
-
   }
 
-  //Lifting state up Function
-  handleChangeMenuIndex (MenuIndex :number) {
-    this.setState({
-      MenuItemIndex : MenuIndex
-    })
-  }
+
 
   render() {
-    console.log(this.state.MenuItemIndex)
-    
+
     return (
     <div className='Sidebar'>
-      <img className='Sidebar__Logo' src='img/side_logo.png'></img>
+      <Link to='/PageMyDb'><img className='Sidebar__Logo' src='img/side_logo.png'/></Link>
       <div className='Sidebar__Menu'>
         {SidebarData.map((MenuItem, index) => <SidebarItem
-          MenuItem={MenuItem} key={MenuItem.id} MenuItemIndex={index} 
-          handleChangeMenuIndex={this.handleChangeMenuIndex.bind(this)}
+          MenuItem={MenuItem} key={MenuItem.id} 
         />)}
       </div>
 
