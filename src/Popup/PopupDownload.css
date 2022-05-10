@@ -1,0 +1,114 @@
+/*Common*/
+.Popup {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.37);
+  transition-property: opacity, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in;
+}
+
+.Popup--open {
+  display: block;
+  opacity: 1;
+  visibility: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.37);
+  transition-property: opacity, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in;
+}
+
+.PopupBox{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform : translate(-50%, -50%);
+  width:40rem;
+  min-height: 35rem;
+  background-color: var(--color-white);
+  border-radius : 0.4rem;
+  box-shadow : 0 0 1rem rgba(0,0,0,0.1);
+  padding:4rem 3.6rem 2.8rem 3.6rem;
+}
+
+.PopupBox__CloseButton{
+  position:absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+
+/*----- PopupDownload -----*/
+
+.PopupDownload.PopupBox{
+ width:55rem;
+}
+
+.PopupBox__Title{
+  font-size:2.4rem;
+  font-weight: 600;
+  text-align:center;
+}
+
+.PopupBox__PageOption{
+  margin-top:2rem;
+  border:0.5px solid var(--color-grey-light-2);
+  padding:2rem;
+}
+
+.PopupBox__PageOptionText{
+  margin-bottom:2.8rem;
+  font-size:1.6rem;
+  color:var(--color-grey-dark-1);
+}
+.PopupBox__PageOptionSet,
+.PopupBox__PageOptionSet li{ 
+  display:flex;
+  align-items: center;
+}
+
+.PageOptionSet__PageOptionElement + .PageOptionSet__PageOptionElement{
+  margin-left:1.2rem;
+}
+
+.PageOptionSet__PageOptionElement{
+  display: inline-flex;
+  align-items: center;
+}
+
+.PageOptionSet__PageOptionTitle{
+  margin-right:1.2rem;
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.PopupBox__PageOptionSet + .PopupBox__PageOptionSet{
+  margin-top:2.8rem;
+}
+
+.PopupDownload__Button{
+  width:20rem;
+  margin: 2rem auto 0;
+}
+
+.PageOptionSet__PageOptionElement{
+  font-size:1.4rem;
+}
+
+.PageOptionSet__PageOptionElement .Checkbox{
+  margin-right:0.4rem;
+}

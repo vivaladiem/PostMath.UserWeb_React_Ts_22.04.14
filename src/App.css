@@ -6,11 +6,13 @@
   min-height: 100vh;
   overflow: hidden;
   word-break: break-all;
+  letter-spacing: -0.6px;
+  color:var(--color-black)
 }
 
 .Container {
   position: relative;
-  z-index: 40;
+  z-index: 39;
   min-height: 100vh;
   width:106rem;
   padding: 60px 60px 256px 60px;
@@ -19,5 +21,19 @@
 
 a{
   text-decoration:none;
-  color: #4f4f4f;
+}
+
+.ScrollBox::-webkit-scrollbar-thumb {
+  background-color: #777;
+  border-radius: 8px;
+}
+
+.ScrollBox::-webkit-scrollbar-track {
+  background-color: transparent;
+  background-color: #eee;
+}
+
+.ScrollBox::-webkit-scrollbar {
+  background-color: white;
+  width: 6px;
 }

@@ -17,7 +17,7 @@ li {
   left:0;
   background-color:var(--color-black);
   color:var(--color-white);
-  z-index:100;
+  z-index:1000;
 }
 
 
@@ -34,6 +34,7 @@ li {
 }
 
 .Sidebar__MenuItem{
+  color:var(--color-grey);
   font-size:2rem;
   font-weight: 400;
   cursor:pointer;
