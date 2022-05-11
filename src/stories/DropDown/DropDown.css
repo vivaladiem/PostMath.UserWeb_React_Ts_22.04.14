@@ -5,6 +5,7 @@
     overflow: hidden;
 }
 
+
 .DropDown__Button {
     border: 1px solid var(--color-grey);
     border-radius: 4px;
@@ -15,7 +16,7 @@
     padding: 0 1.6rem;
 }
 
-.DropDown__Button--open {
+.DropDown:focus .DropDown__Button {
     /* border: 1px solid transparent;*/
     border-color: var(--color-black);
     border-bottom-left-radius: 0;
@@ -35,12 +36,16 @@
     margin-left: auto; /* align right */
 }
 
-.DropDown__Arrow--open {
+.DropDown:focus .DropDown__Arrow {
     transform: rotate(-180deg);
 }
 
-
 .DropDown__List {
+    visibility: collapse;
+}
+
+.DropDown:focus .DropDown__List {
+    visibility: visible;
     margin-top: -1rem;
     position: relative;
     list-style: none;

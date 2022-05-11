@@ -1,5 +1,5 @@
 // DropDownBase.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, SyntheticEvent } from 'react';
 import './DropDown.css';
 import ClassyName from '../../common/ClassyName';
 
@@ -14,38 +14,53 @@ import ClassyName from '../../common/ClassyName';
  */
 
 
-export function DropDownBase(props : Props) {
+export default class DropDownBase extends React.Component<Props, State> {
 
-    const [open, setOpen] = useState(false);
-
-    // 클래스이름을 구성한다.
-    let className = new ClassyName("DropDown");
-    if (open) {
-        className.modifier("open");
-    }
-    if (props.className) {
-        className.externalClassName(props.className);
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            isOpen: false
+        }
     }
 
-    // 버튼을 구성한다.
-    let button = props.renderButton(open);
-    if (props.willHideButton && open) {
-        button = null;
+    onFocus = (e: SyntheticEvent<HTMLDivElement>) => {
+        
     }
+
+    render() {
+
+        // 클래스이름을 구성한다.
+        let className = new ClassyName("DropDown");
+        if (this.state.isOpen) {
+            className.modifier("open");
+        }
+        if (this.props.className) {
+            className.externalClassName(this.props.className);
+        }
+
+        // 버튼을 구성한다.
+        let button = this.props.renderButton(this.state.isOpen);
+        if (this.props.willHideButton && this.state.isOpen) {
+            button = null;
+        }
 
         return (
-            <div className={className.getResult()} onClick={()=>setOpen(!open)} onBlur={()=>setOpen(false)} tabIndex={0} >
+            <div className={className.getResult()}  tabIndex={-1} onFocus={this.onFocus}>
                 {button}
-                {open ? props.children : null}
+                {this.props.children}
             </div>
         )
     }
+}
 
-export default DropDownBase;
 
-export interface Props {
+interface Props {
     className?: string;
     renderButton: (isOpen?: boolean) => React.ReactNode;
     willHideButton?: boolean;
     children: React.ReactNode;
+}
+
+interface State {
+    isOpen: boolean;
 }
