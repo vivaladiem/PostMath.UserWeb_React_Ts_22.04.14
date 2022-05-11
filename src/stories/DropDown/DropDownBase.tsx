@@ -1,5 +1,5 @@
 // DropDownBase.tsx
-import React, { useState, useEffect, SyntheticEvent } from 'react';
+import React, { SyntheticEvent } from 'react';
 import './DropDown.css';
 import ClassyName from '../../common/ClassyName';
 
@@ -15,6 +15,8 @@ import ClassyName from '../../common/ClassyName';
 
 
 export default class DropDownBase extends React.Component<Props, State> {
+    
+    private dropDownRef = React.createRef<HTMLDivElement>();
 
     constructor(props: Props) {
         super(props);
@@ -23,8 +25,31 @@ export default class DropDownBase extends React.Component<Props, State> {
         }
     }
 
-    onFocus = (e: SyntheticEvent<HTMLDivElement>) => {
-        
+    onButtonClicked = (e:SyntheticEvent<HTMLElement>) => {
+        this.setState({isOpen: !this.state.isOpen})
+    }
+
+    onItemClicked = () => {
+        if (this.props.willCloseOnItemSelected) {
+            this.setState({isOpen: false});
+        }
+    }
+
+    outsideClickHandler = (event: MouseEvent) => {
+        const isOutsideClicked = !this.dropDownRef.current?.contains(event.target as Node);
+        if (this.props.willCloseOnOutsideClicked == true
+            || this.props.willCloseOnOutsideClicked == undefined 
+            && isOutsideClicked) {
+            this.setState({isOpen: false})
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.outsideClickHandler);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.outsideClickHandler);
     }
 
     render() {
@@ -45,9 +70,13 @@ export default class DropDownBase extends React.Component<Props, State> {
         }
 
         return (
-            <div className={className.getResult()}  tabIndex={-1} onFocus={this.onFocus}>
-                {button}
-                {this.props.children}
+            <div ref={this.dropDownRef} className={className.getResult()}>
+                <div onClick={this.onButtonClicked}>
+                    {button}
+                </div>
+                <div onClick={this.onItemClicked}>
+                    {this.state.isOpen && this.props.children}
+                </div>
             </div>
         )
     }
@@ -56,8 +85,10 @@ export default class DropDownBase extends React.Component<Props, State> {
 
 interface Props {
     className?: string;
-    renderButton: (isOpen?: boolean) => React.ReactNode;
+    renderButton(isOpen?: boolean) : React.ReactNode;
     willHideButton?: boolean;
+    willCloseOnOutsideClicked?: boolean;
+    willCloseOnItemSelected?: boolean;
     children: React.ReactNode;
 }
 

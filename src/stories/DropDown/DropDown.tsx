@@ -35,7 +35,8 @@ class DropDown extends React.Component<Props> {
         return (
             <DropDownBase
                 className={this.props.className}
-                renderButton = {this.renderButton}>
+                renderButton = {this.renderButton}
+                willCloseOnItemSelected={this.props.willCloseOnItemSelected}>
                     {this.props.children}
             </DropDownBase>
         )
@@ -48,6 +49,7 @@ interface Props {
     children: React.ReactNode;
     label: any;
     iconSrc?: string;
+    willCloseOnItemSelected?: boolean;
 }
 
 export default DropDown;
