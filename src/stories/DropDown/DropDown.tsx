@@ -30,8 +30,11 @@ class DropDown extends React.Component<Props> {
 
 
     render() {
+        
+
         return (
             <DropDownBase
+                className={this.props.className}
                 renderButton = {this.renderButton}>
                     {this.props.children}
             </DropDownBase>
@@ -41,6 +44,7 @@ class DropDown extends React.Component<Props> {
 
 
 interface Props {
+    className?: string;
     children: React.ReactNode;
     label: any;
     iconSrc?: string;
