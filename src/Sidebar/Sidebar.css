@@ -7,7 +7,7 @@ li {
 }
 
 /*Side*/
-.Sidebar{
+.SideBar{
   width:22rem;
   height:100vh;
   padding:3rem 3rem 6rem 3rem;
@@ -21,11 +21,11 @@ li {
 }
 
 
-.Sidebar__Logo{
+.SideBar__Logo{
   width:16rem;
 }
 
-.Sidebar__Menu{
+.SideBar__Menu{
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -33,21 +33,21 @@ li {
   line-height:4rem;
 }
 
-.Sidebar__MenuItem{
+.SideBar__MenuItem{
   color:var(--color-grey);
   font-size:2rem;
   font-weight: 400;
   cursor:pointer;
 }
 
-.Sidebar__MenuItem--selected{
+.SideBar__MenuItem--selected{
   font-size:2rem;
   font-weight: 500;
   color: var(--color-primary);
   cursor:pointer;
 }
 
-.Sidebar__MenuSubItem {
+.SideBar__MenuSubItem {
   font-size:1.4rem;
   visibility: hidden;
   height: 0;
@@ -55,7 +55,7 @@ li {
   opacity: 0;
 }
 
-.Sidebar__MenuSubItem--open {
+.SideBar__MenuSubItem--open {
   visibility: visible;
   margin: 0.8rem 0;
   line-height: 2.4rem;
@@ -70,28 +70,25 @@ li {
   transition-timing-function: ease-in-out;
 }
 
-.Sidebar__SubItem{
+.SideBar__SubItem{
   font-size : 1.4rem;
 }
 
-.Sidebar__SubItem--selected,
-.Sidebar__SubItem:hover{
+.SideBar__SubItem--selected,
+.SideBar__SubItem:hover{
   font-size : 1.4rem;
   color: var(--color-primary);
 }
 
-.Sidebar__User{
-  width:100%;
-  height:6rem;
-  padding: 1.4rem 1.8rem;
-  position:absolute;
-  bottom:0;
-  left:0;
-  background-color:#333333;
+/*User*/ 
+
+@media (max-width: 1280px){
+.SideBar__User {
+  bottom:1.6rem !important;
+}
 }
 
-/*User*/ 
-.Sidebar__User {
+.SideBar__User {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -101,7 +98,7 @@ li {
   padding: 1.4rem 1.2rem 1.2rem 1.2rem;
 }
 
-.Sidebar__UserInfomation {
+.SideBar__UserInfomation {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -109,26 +106,26 @@ li {
   cursor: pointer;
 }
 
-.Sidebar__UserInfomationImg {
+.SideBar__UserInfomationImg {
   width: 3.2rem;
   height: 3.2rem;
   vertical-align: bottom;
 }
 
-.Sidebar__UserInfomationKong {
+.SideBar__UserInfomationKong {
   width: 2.2rem;
   height: 2.2rem;
   vertical-align: bottom;
 }
 
-.Sidebar__UserInfomationName {
+.SideBar__UserInfomationName {
   color: whitesmoke;
   font-weight: 400;
   font-size: 1.4rem;
   transition : 0.15s ease-in;
 }
 
-.Sidebar__UserInfomationName--selected {
+.SideBar__UserInfomationName--selected {
   color: whitesmoke;
   font-weight: 400;
   font-size: 1.4rem;
@@ -137,13 +134,13 @@ li {
 }
 
 
-.Sidebar__UserInfomationPoint {
+.SideBar__UserInfomationPoint {
   font-weight: 400;
   font-size: 1.4rem;
   color: var(--color-primary);
 }
 
-.Sidebar__UserButton {
+.SideBar__UserButton {
   height: 2rem;
   width: 2rem;
   background-color: #333;
@@ -155,7 +152,7 @@ li {
   transition-timing-function: ease-in-out;
 }
 
-.Sidebar__UserButton--open{
+.SideBar__UserButton--open{
   height: 2rem;
   width: 2rem;
   background-color: #333;
@@ -165,7 +162,7 @@ li {
   transition-timing-function: ease-in-out;
 }
 
-.Sidebar__UserPopup {
+.SideBar__UserPopUp {
   position: absolute;
   left: 0;
   color: #333;
@@ -178,23 +175,32 @@ li {
 
 }
 
-.Sidebar__UserPopup--open {
+.SideBar__UserPopUp--open {
   opacity: 1;
   visibility: inherit;
   bottom: 6rem;
   transition-property: opacity, visibility;
-  transition-duration: 0.25s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
 
-.Sidebar__UserList {
+.SideBar__UserPopUp--close {
+  opacity: 0;
+  visibility: hidden;
+  bottom: 6rem;
+  transition-property: opacity, visibility;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.SideBar__UserListItem {
   font-size: 1.4rem;
   line-height: 2.4rem;
   color: #8f8f8f;
   transition: color 0.25s ease-in-out;
 }
 
-.Sidebar__UserListItem:hover {
+.SideBar__UserListItem:hover {
   cursor: pointer;
   color: var(--color-primary);
   transition: color 0.25s ease-in-out;

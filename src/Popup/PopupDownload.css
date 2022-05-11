@@ -1,5 +1,5 @@
 /*Common*/
-.Popup {
+.PopUp {
   display: block;
   opacity: 0;
   visibility: hidden;
@@ -15,7 +15,7 @@
   transition-timing-function: ease-in;
 }
 
-.Popup--open {
+.PopUp--open {
   display: block;
   opacity: 1;
   visibility: inherit;
@@ -31,7 +31,7 @@
   transition-timing-function: ease-in;
 }
 
-.PopupBox{
+.PopUp{
   position:fixed;
   top:50%;
   left:50%;
@@ -44,7 +44,7 @@
   padding:4rem 3.6rem 2.8rem 3.6rem;
 }
 
-.PopupBox__CloseButton{
+.PopUp__CloseButton{
   position:absolute;
   top: 2rem;
   right: 2rem;
@@ -52,31 +52,31 @@
 }
 
 
-/*----- PopupDownload -----*/
+/*----- PopUpDownload -----*/
 
-.PopupDownload.PopupBox{
+.PopUpDownload.PopUp{
  width:55rem;
 }
 
-.PopupBox__Title{
+.PopUp__Title{
   font-size:2.4rem;
   font-weight: 600;
   text-align:center;
 }
 
-.PopupBox__PageOption{
+.PopUp__PageOption{
   margin-top:2rem;
   border:0.5px solid var(--color-grey-light-2);
   padding:2rem;
 }
 
-.PopupBox__PageOptionText{
+.PopUp__PageOptionText{
   margin-bottom:2.8rem;
   font-size:1.6rem;
   color:var(--color-grey-dark-1);
 }
-.PopupBox__PageOptionSet,
-.PopupBox__PageOptionSet li{ 
+.PopUp__PageOptionSet,
+.PopUp__PageOptionSet li{ 
   display:flex;
   align-items: center;
 }
@@ -96,11 +96,11 @@
   font-weight:700;
 }
 
-.PopupBox__PageOptionSet + .PopupBox__PageOptionSet{
+.PopUp__PageOptionSet + .PopUp__PageOptionSet{
   margin-top:2.8rem;
 }
 
-.PopupDownload__Button{
+.PopUpDownload__Button{
   width:20rem;
   margin: 2rem auto 0;
 }

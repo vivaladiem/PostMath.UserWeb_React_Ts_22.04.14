@@ -1,27 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Button from '../stories/Button/Button';
-import './Popup.css'
+import './PopUp.css'
 
 
-interface Props{
-  selectBoxPopupClicked :boolean;
-  SelectBoxPopupButtonClicked : any;
-  mainTitle:string;
+interface Props {
+  selectBoxPopUpClicked: boolean;
+  SelectBoxPopUpButtonClicked: any;
+  mainTitle: string;
 }
 
 class PopUpSelectBox extends Component<Props> {
-  render(){
+  render() {
 
-    const isActive = this.props.selectBoxPopupClicked ? "Popup--open":"Popup"
+    const isActive = this.props.selectBoxPopUpClicked ? "PopUp--open" : "PopUp"
 
-    return(
+    return (
       <div className={isActive + ' ' + 'PopUpSelectBox'}>
-        <div className='PopupBox'>
-          <img className='PopupBox__CloseButton' src='img/PopupClose.svg'
-            onClick={() => { this.props.SelectBoxPopupButtonClicked() }}
+        <div className='PopUp'>
+          <img className='PopUp__CloseButton' src='img/PopUpClose.svg'
+            onClick={() => { this.props.SelectBoxPopUpButtonClicked() }}
           />
-          <p className='PopupBox__MainText'>{this.props.mainTitle}</p>
-          <ul className="PopupBox__Folderarea ScrollBox">
+          <p className='PopUp__MainText'>{this.props.mainTitle}</p>
+          <ul className="PopUp__Folderarea ScrollBox">
             <li className="Folderarea__Item">첫번째 데이터</li>
             <li className="Folderarea__Item">두번째 데이터</li>
             <li className="Folderarea__Item">세번째 데이터</li>
@@ -33,7 +33,7 @@ class PopUpSelectBox extends Component<Props> {
             <li className="Folderarea__Item">아홉번째 데이터</li>
             <li className="Folderarea__Item">열번째 데이터</li>
           </ul>
-          <div className='PopupBox__ButtonArea'>
+          <div className='PopUp__ButtonArea'>
             <Button size="large" color="green">저장하기</Button>
           </div>
         </div>

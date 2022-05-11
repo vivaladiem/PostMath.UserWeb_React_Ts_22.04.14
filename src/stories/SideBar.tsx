@@ -7,7 +7,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-export default function (props : Props) {
+export default function (props: Props) {
     return (
         <div className={"SideBar " + props.className}>
             {props.children}

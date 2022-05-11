@@ -1,0 +1,41 @@
+.LogOut{
+  opacity:0.8;
+  background-color:var(--color-white);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000;
+  text-align:center;
+  animation: smoothLogout 1s;
+}
+
+.LogOut__Image{
+  margin-top: 28rem;
+}
+
+.LogOut__MainText{
+  margin-top:6rem;
+}
+
+.LogOut__SubText{
+  margin-top:2rem;
+  color: var(--color-grey-dark-1);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.LogOut__ButtonArea{
+  width:20rem;
+  margin: 4rem auto;
+}
+
+@keyframes smoothLogout{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 0.8;
+  }
+}

@@ -1,37 +1,38 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Button from '../stories/Button/Button';
-import './Popup.css'
+import './PopUp.css'
+import ClassyName from '../common/ClassyName';
 
-interface Props{
-  InputPopupButtonClicked:any;
-  inputPopupClicked:boolean;
-  mainTitle:string;
-  Buttonchildren:string
-  ButtonColor:"green" | "grey" | "blue";
-  children:any;
+interface Props {
+  inputPopUpButtonClicked: () => void;
+  mainTitle: string;
+  Buttonchildren: string
+  ButtonColor: "green" | "grey" | "blue";
+  children: any;
 }
 
-interface state{
-  
+interface state {
+
 }
 
 class PopUpInput extends Component<Props> {
 
-  render(){
-    
-    const isActive = this.props.inputPopupClicked ? "Popup--open":"Popup"
+  render() {
 
-    return(
-      <div className={isActive+' '+'PopUpInput'}>
-        <div className='PopupBox'>
-          <img className='PopupBox__CloseButton' src='img/PopupClose.svg'
-            onClick={()=>{this.props.InputPopupButtonClicked()}}
+    // const isActive = this.props.inputPopUpClicked ? "PopUp--open" : "PopUp"
+    let className = new ClassyName("PopUp");
+
+    return (
+      <div className={'PopUpInput'}>
+        <div className='PopUp'>
+          <img className='PopUp__CloseButton' src='img/PopUpClose.svg'
+            onClick={() => { this.props.inputPopUpButtonClicked() }}
           />
-          <p className='PopupBox__MainText'>{this.props.mainTitle}</p>
-          <div className="PopupBox__SubText">
+          <p className='PopUp__MainText'>{this.props.mainTitle}</p>
+          <div className="PopUp__SubText">
             {this.props.children}
           </div>
-          <div className='PopupBox__ButtonArea'>
+          <div className='PopUp__ButtonArea'>
             <Button size="large" color={this.props.ButtonColor}>{this.props.Buttonchildren}</Button>
           </div>
         </div>

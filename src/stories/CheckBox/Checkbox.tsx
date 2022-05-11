@@ -35,6 +35,6 @@ export default Checkbox;
 
 interface Props {
   className?: string;
-  onClicked?: (isChecked: Boolean) => void;
+  onClicked?(isChecked: Boolean) : void;
   isChecked: Boolean;
 }
