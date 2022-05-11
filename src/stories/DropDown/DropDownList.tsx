@@ -65,7 +65,7 @@ class DropDownList extends React.Component<Props, State> {
 
 
         return (
-            <DropDown iconSrc='./img/icon_folder.svg' label={this.state.label}>
+            <DropDown iconSrc='./img/icon_folder.svg' label={this.state.label} willCloseOnItemSelected={true}>
                 {list}
             </DropDown>
         )

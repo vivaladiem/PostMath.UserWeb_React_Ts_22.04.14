@@ -12,7 +12,7 @@ export function MoreMenu(props : Props) {
     }
 
     return (
-        <DropDownBase className={className.getResult()}
+        <DropDownBase className={className.getResult()} willCloseOnItemSelected={true}
             renderButton={() => <img className="MoreMenu__Button" src="./img/icon_more.png" alt="more menu" />}
             willHideButton={false}>
                 {props.children}

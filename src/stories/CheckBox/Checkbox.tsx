@@ -9,7 +9,7 @@ interface Props {
 
 class Checkbox extends Component<Props> {
 
-  onClicked = (e: React.SyntheticEvent) => {
+  onClicked = () => {
     if (this.props.onClicked) {
       this.props.onClicked(this.props.isChecked);
     } 
@@ -35,6 +35,6 @@ export default Checkbox;
 
 interface Props {
   className?: string;
-  onClicked?: (isChecked: Boolean) => void;
+  onClicked?(isChecked: Boolean) : void;
   isChecked: Boolean;
 }
