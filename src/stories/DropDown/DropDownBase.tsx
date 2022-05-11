@@ -1,5 +1,5 @@
 // DropDownBase.tsx
-import React, { useState, useEffect } from 'react';
+import React, { SyntheticEvent } from 'react';
 import './DropDown.css';
 import ClassyName from '../../common/ClassyName';
 
@@ -14,38 +14,84 @@ import ClassyName from '../../common/ClassyName';
  */
 
 
-export function DropDownBase(props : Props) {
+export default class DropDownBase extends React.Component<Props, State> {
+    
+    private dropDownRef = React.createRef<HTMLDivElement>();
 
-    const [open, setOpen] = useState(false);
-
-    // 클래스이름을 구성한다.
-    let className = new ClassyName("DropDown");
-    if (open) {
-        className.modifier("open");
-    }
-    if (props.className) {
-        className.externalClassName(props.className);
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            isOpen: false
+        }
     }
 
-    // 버튼을 구성한다.
-    let button = props.renderButton(open);
-    if (props.willHideButton && open) {
-        button = null;
+    onButtonClicked = (e:SyntheticEvent<HTMLElement>) => {
+        this.setState({isOpen: !this.state.isOpen})
     }
+
+    onItemClicked = () => {
+        if (this.props.willCloseOnItemSelected) {
+            this.setState({isOpen: false});
+        }
+    }
+
+    outsideClickHandler = (event: MouseEvent) => {
+        const isOutsideClicked = !this.dropDownRef.current?.contains(event.target as Node);
+        if (this.props.willCloseOnOutsideClicked == true
+            || this.props.willCloseOnOutsideClicked == undefined 
+            && isOutsideClicked) {
+            this.setState({isOpen: false})
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.outsideClickHandler);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.outsideClickHandler);
+    }
+
+    render() {
+
+        // 클래스이름을 구성한다.
+        let className = new ClassyName("DropDown");
+        if (this.state.isOpen) {
+            className.modifier("open");
+        }
+        if (this.props.className) {
+            className.externalClassName(this.props.className);
+        }
+
+        // 버튼을 구성한다.
+        let button = this.props.renderButton(this.state.isOpen);
+        if (this.props.willHideButton && this.state.isOpen) {
+            button = null;
+        }
 
         return (
-            <div className={className.getResult()} onClick={()=>setOpen(!open)} onBlur={()=>setOpen(false)} tabIndex={0} >
-                {button}
-                {open ? props.children : null}
+            <div ref={this.dropDownRef} className={className.getResult()}>
+                <div onClick={this.onButtonClicked}>
+                    {button}
+                </div>
+                <div onClick={this.onItemClicked}>
+                    {this.state.isOpen && this.props.children}
+                </div>
             </div>
         )
     }
+}
 
-export default DropDownBase;
 
-export interface Props {
+interface Props {
     className?: string;
-    renderButton: (isOpen?: boolean) => React.ReactNode;
+    renderButton(isOpen?: boolean) : React.ReactNode;
     willHideButton?: boolean;
+    willCloseOnOutsideClicked?: boolean;
+    willCloseOnItemSelected?: boolean;
     children: React.ReactNode;
+}
+
+interface State {
+    isOpen: boolean;
 }

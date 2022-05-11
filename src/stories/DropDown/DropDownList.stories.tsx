@@ -6,9 +6,9 @@ const items = ["파일1", "파일2", "파일3"];
 
 const onSelect = (index: number) => {
     if (index >= 0) {
-        alert(index + '번 항목 - ' +  items[index] + " 선택");
+        console.log(index + '번 항목 - ' +  items[index] + " 선택");
     } else {
-        alert("선택 취소");
+        console.log("선택 취소");
     }
 }
 
