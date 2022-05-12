@@ -1,0 +1,234 @@
+.jstree-node,
+.jstree-children,
+.jstree-container-ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+  position:relative;
+}
+
+.jstree-anchor,
+.jstree-anchor:link,
+.jstree-anchor:visited,
+.jstree-anchor:hover,
+.jstree-anchor:active {
+  text-decoration: none;
+  color: black;
+}
+
+.jstree-node + .jstree-node{
+  border-top: 1px solid #e5e5e5;
+}
+
+.jstree-icon:empty {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0;
+  padding-left: 0;
+  vertical-align: top;
+  text-align: center;
+}
+.jstree .jstree-open > .jstree-children {
+  display: block !important;
+}
+
+.jstree-default .jstree-no-icons .jstree-anchor > .jstree-themeicon {
+  display: none;
+}
+.jstree-default .jstree-disabled {
+  background: transparent;
+  color: #666666;
+}
+
+.jstree-default .jstree-node {
+  min-height: 2.4rem;
+  line-height: 2.4rem;
+  min-width: 2.4rem;
+}
+.jstree-default .jstree-anchor {
+  line-height: 4rem;
+  height: 2.4rem;
+}
+.jstree-default .jstree-icon:empty {
+  width: 2.4rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  margin : 0.8rem ;
+}
+.jstree-default.jstree-rtl .jstree-node {
+  margin-right: 2.4rem;
+}
+.jstree-default .jstree-wholerow {
+  height: 2.4rem;
+}
+/* .jstree-default .jstree-node,
+.jstree-default .jstree-icon {
+  background-image: url("32px.png");
+} */
+.jstree-default .jstree-node {
+  background-position: -29.2rem -4px;
+  background-repeat: repeat-y;
+}
+.jstree-default .jstree-last {
+  background: transparent;
+}
+.jstree-default .jstree-open > .jstree-ocl {
+  background: url(/public/img/arrow_icon1.png) no-repeat center center;
+  cursor: pointer;
+  height: 1.2rem;
+  margin-top: 0.6rme;
+  transform: rotate(180deg);
+  transition: all ease 0.25s;
+}
+.jstree-default .jstree-closed > .jstree-ocl {
+  background: url(/public/img/arrow_icon1.png);
+  cursor: pointer;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-top: 0.6rme;
+  transition: all ease 0.25s;
+}
+
+.jstree-default > .jstree-no-dots .jstree-node,
+.jstree-default > .jstree-no-dots .jstree-leaf > .jstree-ocl {
+  background: transparent;
+  width: auto;
+  margin-right: 0;
+}
+.jstree-default > .jstree-no-dots .jstree-open > .jstree-ocl {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  height: 2rem;
+}
+.jstree-default > .jstree-no-dots .jstree-closed > .jstree-ocl {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+.jstree-default .jstree-disabled {
+  background: transparent;
+}
+
+.jstree-default .jstree-checkbox {
+  background: url(/public/img/check_off.svg);
+}
+
+.jstree-default.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox,
+.jstree-default .jstree-checked > .jstree-checkbox {
+  background: url(/public/img/check_on.svg);
+}
+
+.jstree-default .jstree-anchor > .jstree-undetermined {
+  background: url(/public/img/minus_btn.svg);
+}
+
+.jstree-default > .jstree-container-ul > .jstree-node {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#jstree{
+  font-size: 1.4rem;
+  color: black;
+  margin:0;
+}
+
+.jstree{
+  width:100%;
+}
+
+.jstree_wrap {
+  text-align:left;
+  max-height: 37rem;
+  border: 1px solid #e5e5e5;
+  overflow-y: auto;
+}
+
+.jstree_wrap > li {
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 5rem;
+}
+
+.jstree_wrap li .jstree_wrap_btn {
+  color: #000;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.jstree_wrap li > .jstree_wrap_open {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.8rem;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  background: url(/public/img/arrow_icon1.png) no-repeat center center;
+}
+.jstree_wrap li > ul {
+  display: none;
+  background-color: #f8f8f8;
+}
+.jstree_wrap li > ul > li {
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+}
+.jstree-default.jstree-checkbox-selection .jstree-clicked {
+  color: #2becb2;
+  font-size: 1.4rem;
+  line-height: 4rem;
+}
+
+.jstree_wrap{
+  width:100%;
+  position: relative;
+}
+
+#jstree {
+  padding:0;
+}
+
+#jstree a {
+  height: 4.9rem;
+  padding-top:1.2rem;
+  margin-left: 1.2rem;
+}
+
+.second_tree a {
+  height: 4.9rem !important;
+  padding-top: 1.2rem;
+  margin-left: 1.2rem;
+}
+
+[aria-level="2"] {
+  padding-left: 1.6rem;
+}
+
+[aria-level="3"] {
+  padding-left: 3.2rem;
+}
+
+[aria-level="4"] {
+  padding-left: 4.8rem;
+}
+
+[aria-level="5"] {
+  padding-left: 6.4rem;
+}
+
+[aria-level="6"] {
+  padding-left: 8rem;
+}
+
+[aria-level="7"] {
+  padding-left: 9.6rem;
+}
+
+[aria-level="8"] {
+  padding-left: 10.2rem;
+}

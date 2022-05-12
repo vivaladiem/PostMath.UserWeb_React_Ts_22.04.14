@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.1",
+    "@types/jstree": "^3.3.41",
     "@types/node": "^16.11.27",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.0",
@@ -15,6 +16,7 @@
     "next": "^12.1.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-jstree-table": "^0.0.24",
     "react-scripts": "5.0.1",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
