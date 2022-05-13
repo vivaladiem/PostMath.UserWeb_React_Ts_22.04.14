@@ -1,79 +1,34 @@
-import React, { createElement } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import Button from './stories/Button/Button';
+import PopUp from './stories/PopUp/PopUp';
+import PopUpChangeTitle from './stories/PopUp/PopUpChangeTitle';
 
 function App() {
 
-  let buttons:React.ReactNode[] = [];
-  let iconButtons:React.ReactNode[] = [];
-
-  const size = ["", "small", "large"];
-  const state = ["", "disabled", "negative"];
-  const line = [false, true];
-  const round = [false, true];
-  const iconSrc = "/img/icon_clip.svg";
-  const inline = [false, true];
-
-    for (var a = 0; a < size.length; a++) {
-      for (var d = 0; d < round.length; d++) {
-        for (var c = 0; c < line.length; c++) {
-          for (var b = 0; b < state.length; b++) {
-            let label = 'button';
-            if (a > 0) label += "_" + size[a];
-            if (line[c]) {
-              label += "_line";
-            }
-            if (round[d]) {
-              label += "_round";
-            }
-            
-            buttons.push(<Button 
-              size={size[a]}
-              state={state[b]}
-              line={line[c]}
-              round={round[d]}>
-                {label}
-              </Button>);
-          }
-        }
-      }
-    }
-
-    for (var a = 0; a < size.length; a++) {
-      for (var d = 0; d < round.length; d++) {
-        for (var c = 0; c < line.length; c++) {
-          for (var b = 0; b < state.length; b++) {
-            let label = 'button';
-            if (a > 0) label += "_" + size[a];
-            if (line[c]) {
-              label += "_line";
-            }
-            if (round[d]) {
-              label += "_round";
-            }
-            
-            iconButtons.push(<Button 
-              size={size[a]}
-              state={state[b]}
-              line={line[c]}
-              round={round[d]}
-              iconSrc={iconSrc}
-              >
-                {label}
-              </Button>);
-          }
-        }
-      }
-    }
-
+  const [isSamplePopUpOpen, setSamplePopUpOpen] = useState(false);
+  const [isChangeTitlePopUpOpen, setChangeTitlePopUpOpen] = useState(false);
 
   return (
     <div className="App">
-      <div className="ButtonSampleContainer">
-        {buttons}
-        {iconButtons}
+      <div className="PopUpSampleContainer">
+        <h1>Pop Up 테스트</h1>
+        <h3>샘플 팝업</h3>
+        <Button onClick={() => {setSamplePopUpOpen(true);}}>샘플 팝업 열기</Button>
+        <PopUp isOpen={isSamplePopUpOpen} onClose={() => {setSamplePopUpOpen(false);}} willDarkenBackground={true}>
+          <div className="PopUp__Body">
+            PopUp Sample
+          </div>
+        </PopUp>
+        <h3>제목 바꾸기 팝업</h3>
+        <Button onClick={()=>{setChangeTitlePopUpOpen(true);}}>제목 바꾸기 팝업 열기</Button>
+        <PopUpChangeTitle isOpen={isChangeTitlePopUpOpen} onOpen={()=>{console.log('onOpen');}} onClose={()=>{setChangeTitlePopUpOpen(false);}} onConfirm={(value) => {console.log(value);}} />
       </div>
     </div>
   );
+
+  
 }
+
+
 
 export default App;
